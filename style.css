@@ -1,1 +1,410 @@
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -10%,#292e39,#111318 45%,#0b0d10);color:#f5f6f8;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input{font:inherit}button{border:0;color:inherit;cursor:pointer}header{height:64px;padding:0 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5;background:#111318ee;backdrop-filter:blur(18px)}header span{background:#1b1e25;border:1px solid #292e37;border-radius:14px;padding:8px 11px;font-size:12px}main{max-width:760px;margin:auto}.screen{display:none;padding:20px 18px 110px}.active{display:block}.hero{padding:25px 4px 18px}.hero small,.head small,.lessonRow small,.card small,.level small{color:#858b98;font-size:10px;font-weight:800;letter-spacing:1.2px}.hero h1{font-size:43px;line-height:1;letter-spacing:-2px;margin:11px 0}.hero em{font-style:normal;color:#f4c95d}.hero p,.muted{color:#9da3af;line-height:1.5}.hero button,.primary{width:100%;padding:16px;border-radius:17px;background:#f4c95d;color:#151515;font-weight:850}.hero #micStatus{text-align:center;color:#777e8b;font-size:11px;margin-top:9px}.card,.lesson,.grid button,.level,.lessonRow,.detector,.feedback,.lessonBox,.songHero,.explain,.chordBig,.duration,.runCard{background:#171a20;border:1px solid #272b34;border-radius:19px}.card{padding:17px;margin:14px 0}.card>div:first-child{display:flex;justify-content:space-between;font-size:12px}.card b{color:#f4c95d}.bar,.progress>div{height:7px;background:#2a2e37;border-radius:9px;margin:12px 0}.bar i,.progress i{display:block;width:0;height:100%;background:#f4c95d;border-radius:9px}.mini{display:flex;justify-content:space-between;margin-top:12px;color:#7f8692;font-size:10px}.mini b{color:#fff}.lesson{width:100%;padding:16px;display:flex;align-items:center;text-align:left;gap:13px}.lesson>strong{font-size:24px;width:48px;height:48px;background:#252932;border-radius:14px;display:grid;place-items:center}.lesson h2{font-size:17px;margin:4px 0}.lesson p,.lessonRow p{color:#7e8490;font-size:11px;margin:0}.lesson>span{margin-left:auto;font-size:28px;color:#747b87}.title{font-size:18px;margin:24px 3px 11px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.grid button{text-align:left;padding:18px;min-height:110px;font-size:23px}.grid b,.grid small{display:block}.grid b{font-size:14px;margin-top:15px}.grid small{font-size:10px;color:#777e8b;margin-top:4px}.head{display:flex;align-items:center;gap:12px;margin:10px 0 22px}.head button{width:38px;height:38px;border-radius:13px;background:#1b1e25;font-size:27px}.head h1{font-size:28px;margin:3px 0}.level{padding:19px;display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.level h2{font-size:20px;margin:6px 0}.level>b{background:#f4c95d;color:#151515;width:52px;height:52px;border-radius:17px;display:grid;place-items:center}.lessonRow{width:100%;display:flex;gap:13px;align-items:center;padding:14px;margin:8px 0;text-align:left}.lessonRow i{font-style:normal;width:38px;height:38px;border-radius:12px;background:#252932;display:grid;place-items:center;font-weight:800;flex:none}.lessonRow.done i{background:#b6df8b;color:#172016}.lessonRow h3{margin:5px 0;font-size:14px}.lessonRow>span{margin-left:auto;color:#777e8b;font-size:22px}.lessonVisual{text-align:center;background:#171a20;border:1px solid #272b34;border-radius:22px;padding:20px}.bigNote,.runSymbol{font-size:70px;color:#f4c95d}.lessonVisual b{display:block;font-size:19px;margin-top:5px}.lessonVisual small{color:#777e8b}.lessonBox{padding:20px;margin:12px 0}.lessonBox h2{margin:8px 0}.lessonBox p{color:#9ba1ad;line-height:1.5}.lessonBox>span{font-size:10px;color:#f4c95d;font-weight:800}.steps{background:#171a20;border:1px solid #272b34;border-radius:19px;padding:15px;margin-bottom:12px;color:#aeb4bf;font-size:12px;line-height:2}.duration{padding:13px 15px;margin-bottom:12px;display:flex;justify-content:space-between;color:#888f9b;font-size:11px}.duration b{color:#f4c95d}.runCard{text-align:center;padding:22px;margin-top:15px}.runCard small{display:block;color:#777e8b}.runCard>b{display:block;font-size:34px;color:#f4c95d;margin:6px}.runCard p{color:#9ba1ad}.twoHand{display:flex;gap:8px}.twoHand span{flex:1;background:#252932;padding:10px;border-radius:10px;font-size:10px;color:#c9ced6}.feedback{text-align:center;padding:12px;margin:11px 0;color:#9aa1ad;font-size:12px}.stepCounter{text-align:center;color:#777e8b;font-size:10px;margin:9px}.tabs,.chordTypes,.songTabs{display:flex;gap:8px;margin-bottom:13px}.tabs button,.chordTypes button,.songTabs button{flex:1;padding:11px;border-radius:12px;background:#1b1e25;font-size:11px}.tabs button.active,.chordTypes button.active,.songTabs button.active{background:#f4c95d;color:#151515}.hide{display:none}.noteAnim{text-align:center}.staff{height:90px;max-width:320px;margin:auto;background:repeating-linear-gradient(to bottom,transparent 0,transparent 16px,#535863 17px,#535863 18px,transparent 19px);position:relative}.staff span{font-size:64px;color:#f4c95d;position:absolute;left:50%;top:4px;transform:translateX(-50%)}.noteAnim>b{display:block;font-size:30px;color:#f4c95d}.noteAnim small{color:#777e8b}.hand{background:#242933;border-radius:12px;padding:9px;text-align:center;color:#c5cad3;font-size:11px;margin:8px 0}.detector{height:92px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}.detector i{width:10px;height:10px;border-radius:50%;background:#666}.detector b{font-size:21px}.detector small{color:#777e8b}.chordBig{text-align:center;padding:20px}.chordBig small{color:#777e8b;font-size:9px}.chordBig b{display:block;font-size:29px;color:#f4c95d;margin:7px}.chordBig span{color:#aaa;font-size:12px}.chordRoots{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:10px 0}.chordRoots button{background:#1b1e25;border:1px solid #2a2e37;border-radius:10px;padding:10px}.chordRoots button.sel{border-color:#f4c95d}.search{width:100%;padding:13px;border-radius:14px;background:#171a20;border:1px solid #272b34;color:white;outline:0}.song{width:100%;display:flex;align-items:center;gap:12px;background:#171a20;border:1px solid #272b34;border-radius:17px;padding:13px;margin:8px 0;text-align:left}.cover{width:47px;height:47px;border-radius:13px;background:#292d35;display:grid;place-items:center;font-size:23px}.song h3{margin:0 0 4px;font-size:14px}.song p{margin:0;color:#777e8b;font-size:10px}.song strong{font-size:9px;color:#f4c95d;display:block;margin-top:5px}.song span{margin-left:auto;color:#f4c95d;font-size:11px}.songHero{display:flex;gap:15px;align-items:center;padding:17px}.songHero>div:first-child{font-size:43px}.songHero h2{margin:0}.songHero p{margin:4px 0;color:#818894;font-size:11px}.songHero strong{font-size:10px;color:#f4c95d}.explain{padding:15px;margin:10px 0}.explain b{font-size:13px}.explain p{font-size:11px;color:#9ba1ad;line-height:1.5;margin:7px 0 0}.progress{margin:14px 0}.progress>div{margin:0}.progress small{color:#858b98;font-size:10px}.falling{height:230px;position:relative;overflow:hidden;background:linear-gradient(#12151a,#181c23);border:1px solid #2a2e37;border-radius:20px;margin:12px 0}.fallNote{position:absolute;left:50%;top:10px;transform:translateX(-50%);font-size:58px;color:#f4c95d;animation:fall 1.4s linear infinite}.hitLine{position:absolute;left:0;right:0;bottom:32px;border-top:3px solid #f4c95d66;text-align:center;color:#777e8b;font-size:8px}.targets{display:flex;gap:10px}.targets>div{flex:1;background:#171a20;border:1px solid #272b34;border-radius:14px;padding:10px;text-align:center}.targets small{display:block;color:#777e8b;font-size:9px}.targets b{display:block;color:#f4c95d;font-size:17px;margin-top:4px}.targets span{font-size:9px;color:#777e8b}.compact{height:76px;margin-top:10px}.secondary{width:100%;padding:13px;border-radius:15px;background:#252932;margin-top:9px}nav{position:fixed;bottom:0;left:0;right:0;height:78px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:#101217ee;border-top:1px solid #242831;backdrop-filter:blur(20px);display:flex;justify-content:space-around;z-index:10}nav button{background:none;color:#707783;font-size:19px;min-width:65px}nav small{display:block;font-size:9px;margin-top:3px}@keyframes fall{0%{transform:translate(-50%,-10px);opacity:.2}65%{opacity:1}100%{transform:translate(-50%,185px);opacity:.15}}
+/* Базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0f0f1a;
+    color: #e0e0e0;
+    line-height: 1.6;
+    padding: 16px;
+    min-height: 100vh;
+}
+#app {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Шапка */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1a1a2e;
+    padding: 12px 20px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #2a2a4a;
+}
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #f7971e, #ffd200);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.header-stats {
+    display: flex;
+    gap: 16px;
+    font-size: 14px;
+}
+.header-stats span {
+    background: #2a2a4a;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid #3a3a5a;
+}
+
+/* Навигация */
+nav {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    background: #1a1a2e;
+    padding: 8px;
+    border-radius: 16px;
+    border: 1px solid #2a2a4a;
+}
+.nav-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    color: #888;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.nav-btn.active {
+    background: #2a2a4a;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.15);
+}
+.nav-btn:hover {
+    color: #fff;
+}
+
+/* Вкладки */
+.tab-content {
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
+
+/* Список уроков */
+#lessonList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.lesson-card {
+    background: #1a1a2e;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid #2a2a4a;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 13px;
+}
+.lesson-card:hover {
+    border-color: #f7971e;
+    transform: translateY(-2px);
+}
+.lesson-card.active {
+    border-color: #f7971e;
+    background: #2a2a4a;
+}
+.lesson-card .num {
+    color: #f7971e;
+    font-weight: 700;
+    display: block;
+    font-size: 12px;
+}
+
+/* Детали урока */
+#lessonDetail {
+    background: #1a1a2e;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid #2a2a4a;
+}
+.lesson-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #fff;
+}
+.lesson-theory {
+    background: #12121f;
+    padding: 16px;
+    border-radius: 12px;
+    margin: 16px 0;
+    border-left: 4px solid #f7971e;
+}
+.lesson-steps {
+    list-style: none;
+    padding: 0;
+}
+.lesson-steps li {
+    padding: 10px 14px;
+    margin: 6px 0;
+    background: #12121f;
+    border-radius: 10px;
+    border-left: 3px solid #3a3a5a;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+}
+.lesson-steps li.done {
+    border-left-color: #4caf50;
+    opacity: 0.7;
+}
+.lesson-steps li .step-num {
+    background: #2a2a4a;
+    color: #f7971e;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+.lesson-steps li.done .step-num {
+    background: #4caf50;
+    color: #fff;
+}
+.lesson-steps li .step-text {
+    flex: 1;
+}
+.lesson-steps li .step-status {
+    font-size: 18px;
+}
+
+/* Практика */
+.practice-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+.practice-btn {
+    padding: 8px 16px;
+    border: none;
+    background: #1a1a2e;
+    color: #888;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+.practice-btn.active {
+    background: #2a2a4a;
+    color: #fff;
+}
+.practice-btn:hover {
+    color: #fff;
+}
+#practiceContent {
+    background: #1a1a2e;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid #2a2a4a;
+    min-height: 200px;
+}
+
+/* Клавиатура */
+.keyboard-container {
+    overflow-x: auto;
+    padding: 20px 0;
+}
+.keyboard {
+    display: flex;
+    position: relative;
+    height: 160px;
+    min-width: 600px;
+    margin: 0 auto;
+}
+.white-key {
+    flex: 1;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0 0 6px 6px;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.15s;
+    min-width: 30px;
+}
+.white-key:active, .white-key.active {
+    background: #e0e0e0;
+}
+.white-key.highlight {
+    background: #f7971e;
+    border-color: #f7971e;
+    box-shadow: 0 0 20px rgba(247, 151, 30, 0.5);
+}
+.white-key .note-label {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+    pointer-events: none;
+}
+.black-key {
+    width: 24px;
+    height: 65%;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 0 0 4px 4px;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+.black-key:active, .black-key.active {
+    background: #444;
+}
+.black-key.highlight {
+    background: #f7971e;
+    border-color: #f7971e;
+    box-shadow: 0 0 20px rgba(247, 151, 30, 0.5);
+}
+.black-key .note-label {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    font-weight: 600;
+    color: #ccc;
+    pointer-events: none;
+}
+
+/* Сетка ритма (для синкопы) */
+.rhythm-grid {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 16px;
+    background: #12121f;
+    border-radius: 12px;
+    margin: 12px 0;
+}
+.rhythm-beat {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: #2a2a4a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    transition: all 0.2s;
+}
+.rhythm-beat.strong {
+    background: #4a2a2a;
+    border: 2px solid #f44336;
+}
+.rhythm-beat.weak {
+    background: #2a2a4a;
+    border: 2px solid #2196f3;
+}
+.rhythm-beat.active-strong {
+    background: #f44336;
+    color: #fff;
+    transform: scale(1.1);
+}
+.rhythm-beat.active-weak {
+    background: #2196f3;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Схема посадки */
+.posture-diagram {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #12121f;
+    border-radius: 16px;
+    margin: 16px 0;
+}
+.posture-svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* YouTube-плеер */
+.youtube-embed {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 16px;
+    margin: 16px 0;
+    background: #000;
+}
+.youtube-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.video-caption {
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 8px;
+}
+
+/* Кнопки */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    background: #2a2a4a;
+    color: #fff;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 14px;
+}
+.btn:hover {
+    background: #3a3a5a;
+    transform: scale(1.02);
+}
+.btn-primary {
+    background: #f7971e;
+    color: #1a1a2e;
+}
+.btn-primary:hover {
+    background: #ffa726;
+}
+.btn-success {
+    background: #4caf50;
+    color: #fff;
+}
+.btn-success:hover {
+    background: #66bb6a;
+}
+
+/* Адаптив */
+@media (max-width: 600px) {
+    body { padding: 10px; }
+    .logo { font-size: 16px; }
+    .header-stats { font-size: 12px; gap: 8px; }
+    .header-stats span { padding: 2px 8px; }
+    #lessonList { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
+    .lesson-card { padding: 10px; font-size: 12px; }
+    .lesson-title { font-size: 20px; }
+    .white-key { min-width: 20px; }
+    .black-key { width: 18px; }
+    .rhythm-beat { width: 30px; height: 30px; font-size: 16px; }
+}
