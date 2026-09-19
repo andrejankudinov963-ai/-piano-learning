@@ -37,7 +37,7 @@ const LESSON_TITLES = [
   'Независимость пальцев','Четыре звука ровно','Чистота важнее скорости','Метроном: добавляем темп','Контроль силы удара','Легато: связная линия','Стаккато: лёгкий отрыв','Акцент на первой ноте','Три уровня громкости','Короткая техническая связка',
   'Левая рука как бас','Бас + аккорд','Простой вальсовый рисунок','Мелодия справа, бас слева','Мелодия справа, аккорд слева','Не ускоряемся при смене рук','Баланс двух рук','Повторяющийся рисунок левой руки','Держим повторяющийся рисунок','Собираем восьмитактовую фразу',
   'Фраза как предложение','Где закончить музыкальную мысль','Тише внутри фразы','Вершина фразы','Педаль: зачем она','Смена педали без каши','Нота между долями','Три ноты на один пульс',
-  'Как заниматься 15 минут','Как разбирать песню по кусочкам','Песня: понимаем схему обучения','Песня: узнаём первую ноту','Песня: первая мини-фраза правой','Песня: ещё одна мини-фраза','Песня: левая рука отдельно','Песня: соединяем два фрагмента','Песня: четыре ноты без спешки','Песня: добавляем пульс','Песня: убираем одну подсказку','Песня: играем связку целиком','Песня: аккорд и мелодия вместе','Песня: пробный прогон','Финал курса: сложный музыкальный проект'
+  'Как заниматься 13 минуты','Как разбирать песню по кусочкам','Песня: понимаем схему обучения','Песня: узнаём первую ноту','Песня: первая мини-фраза правой','Песня: ещё одна мини-фраза','Песня: левая рука отдельно','Песня: соединяем два фрагмента','Песня: четыре ноты без спешки','Песня: добавляем пульс','Песня: убираем одну подсказку','Песня: играем связку целиком','Песня: аккорд и мелодия вместе','Песня: пробный прогон','Финал курса: сложный музыкальный проект'
 ];
 
 const SONGS = [
@@ -570,7 +570,7 @@ function lessonFooterText(r){if(r.type==='setup')return'Сначала подк�
 function renderSetupTask(r){return `<div class="task card setupTask"><div class="taskTop"><div class="taskLabel">ПОДГОТОВКА</div><span class="taskTag">без спешки</span></div><div class="setupSteps"><div class="setupItem ${mic.stream?'done':''}"><span>1</span><div><b>Микрофон</b><small>${mic.stream?'Подключён':'Нужен доступ к микрофону'}</small></div></div><div class="setupItem"><span>2</span><div><b>Одна клавиша</b><small>Цель: ДО — можно сыграть в любой октаве</small></div></div></div>${!mic.stream?'<button class="primary full" id="setupMic">🎙 Подключить микрофон</button>':''}<div class="targetCard"><div class="targetMeta"><span>ПЕРВАЯ ЦЕЛЬ</span><b>сыграй ДО</b></div>${staffSvg([60],60,'treble')}${keyboardHtml(60)}</div><div id="lessonFeedback">${feedbackMarkup('wait','Жду звук','Сыграй ДО на своём синтезаторе.')}</div></div>`}
 function renderSongCourseTask(r){
   const song=SONGS.find(s=>s.id===r.songId)||SONGS[0];
-  if(r.songKind==='timer') return `<div class="task card"><div class="taskTop"><div class="taskLabel">ПРАКТИКА ПЕСНИ</div><span class="taskTag">3 мини-шага</span></div><div class="focusCard"><div class="focusIcon">⏱</div><div><b>Схема на 15 минут</b><p>5 мин — новые места · 5 мин — медленно · 5 мин — чистый прогон.</p></div></div><div class="miniCheckList"><button class="checkStep" data-selfstep="0">○ Новые места</button><button class="checkStep" data-selfstep="1">○ Медленно</button><button class="checkStep" data-selfstep="2">○ Чистый прогон</button></div><button class="primary full" id="songPlanDone">Готово → к следующей задаче</button></div>`;
+  if(r.songKind==='timer') return `<div class="task card"><div class="taskTop"><div class="taskLabel">ПРАКТИКА ПЕСНИ</div><span class="taskTag">3 мини-шага</span></div><div class="focusCard"><div class="focusIcon">⏱</div><div><b>Схема на 13 минуты</b><p>5 мин — новые места · 5 мин — медленно · 5 мин — чистый прогон.</p></div></div><div class="miniCheckList"><button class="checkStep" data-selfstep="0">○ Новые места</button><button class="checkStep" data-selfstep="1">○ Медленно</button><button class="checkStep" data-selfstep="2">○ Чистый прогон</button></div><button class="primary full" id="songPlanDone">Готово → к следующей задаче</button></div>`;
   if(r.songKind==='choose'){
     const target=r.steps[0];
     return `<div class="task card"><div class="taskTop"><div class="taskLabel">УЗНАЙ НОТУ</div><span class="taskTag">выбор</span></div><div class="targetCard"><div class="targetName">${escapeHtml(noteName(target))}</div>${staffSvg([target],target,guessClef(target))}<div class="targetHint">Какая клавиша соответствует цели?</div><div class="choiceGrid">${[target,(target+2)%12+60,(target+4)%12+60].map((m,i)=>`<button class="choiceBtn" data-choice="${m}">${noteName(m)}</button>`).join('')}</div></div><div id="lessonFeedback">${feedbackMarkup('wait','Выбери ответ','Сначала прочитай название ноты на карточке.')}</div></div>`;
@@ -718,7 +718,7 @@ function renderPractice(){
       <button class="pill ${practiceState.tab==='chords'?'active':''}" data-practice="chords">⌬ Аккорды</button>
       <button class="pill ${practiceState.tab==='ear'?'active':''}" data-practice="ear">👂 Слух</button>
       <button class="pill ${practiceState.tab==='tuner'?'active':''}" data-practice="tuner">🎛 Тюнер</button>
-      <button class="pill ${practiceState.tab==='session'?'active':''}" data-practice="session">⏱ 5 минут</button>
+      <button class="pill ${practiceState.tab==='session'?'active':''}" data-practice="session">⏱ 3 минуты</button>
       <button class="pill ${practiceState.tab==='weak'?'active':''}" data-practice="weak">↗ Слабые места</button>
     </div>
     <div class="practiceIntro card"><div class="sectionKicker">УМНАЯ ПРАКТИКА</div><p>Не обязательно всегда идти по курсу. Здесь можно отдельно тренировать то, что сейчас хочется улучшить: чтение, слух, аккорды, настройку микрофона или быстрый 5-минутный разогрев.</p></div>
@@ -777,8 +777,8 @@ function renderPracticeSession(){
   if(!practiceState.session)practiceState.session={index:0,queue:Array.from({length:12},()=>[60,62,64,65,67,69,71][Math.floor(Math.random()*7)]),started:false,finished:false,endsAt:null,rewarded:false,correct:0,errors:0};
   const st=practiceState.session;
   if(st.started&&!st.finished&&st.endsAt<=Date.now()){st.finished=true;clearPracticeSessionTimer();if(!st.rewarded){awardXP(25);st.rewarded=true}}
-  if(st.finished){$('#practiceBody').innerHTML=`<div class="completeHero card"><div class="completeIcon">✓</div><div class="eyebrow">5-МИНУТНАЯ СЕССИЯ</div><h2>Сессия закончена</h2><p>Ты успел пройти ${st.correct} ${plural(st.correct,'цель','цели','целей')} и получил новый набор опыта для адаптивной практики.</p><div class="reward">+25 XP</div><div class="completeActions"><button class="primary" id="restartSession">Новая сессия</button><button class="secondary" id="backPractice">К нотам</button></div></div>`;$('#restartSession').onclick=()=>{practiceState.session=null;practiceState.note=null;practiceState.notePassed=false;renderPractice()};$('#backPractice').onclick=()=>{practiceState.tab='notes';practiceState.session=null;renderPractice()};return}
-  if(!st.started){$('#practiceBody').innerHTML=`<div class="card explainer"><div class="sectionKicker">ФОКУС · 5 МИНУТ</div><h2>Одна цель за раз, без пауз между заданиями</h2><p>После правильной ноты следующая появляется автоматически. Неверная нота учитывается как ошибка, но не останавливает сессию. В конце ты увидишь результат.</p><button class="primary full" id="startSession">▶ Начать 5 минут</button></div><div class="card focusCard"><div class="focusIcon">⏱</div><div><b>Как проходит сессия</b><p>1. Увидел ноту → 2. сыграл на синтезаторе → 3. сразу получил следующую.</p></div></div>`;$('#startSession').onclick=startPracticeSession;return}
+  if(st.finished){$('#practiceBody').innerHTML=`<div class="completeHero card"><div class="completeIcon">✓</div><div class="eyebrow">3-МИНУТНАЯ РАЗМИНКА</div><h2>Сессия закончена</h2><p>Ты успел пройти ${st.correct} ${plural(st.correct,'цель','цели','целей')} и получил новый набор опыта для адаптивной практики.</p><div class="reward">+25 XP</div><div class="completeActions"><button class="primary" id="restartSession">Новая сессия</button><button class="secondary" id="backPractice">К нотам</button></div></div>`;$('#restartSession').onclick=()=>{practiceState.session=null;practiceState.note=null;practiceState.notePassed=false;renderPractice()};$('#backPractice').onclick=()=>{practiceState.tab='notes';practiceState.session=null;renderPractice()};return}
+  if(!st.started){$('#practiceBody').innerHTML=`<div class="card explainer"><div class="sectionKicker">ФОКУС · 5 МИНУТ</div><h2>Одна цель за раз, без пауз между заданиями</h2><p>После правильной ноты следующая появляется автоматически. Неверная нота учитывается как ошибка, но не останавливает сессию. В конце ты увидишь результат.</p><button class="primary full" id="startSession">▶ Начать 3 минуты</button></div><div class="card focusCard"><div class="focusIcon">⏱</div><div><b>Как проходит сессия</b><p>1. Увидел ноту → 2. сыграл на синтезаторе → 3. сразу получил следующую.</p></div></div>`;$('#startSession').onclick=startPracticeSession;return}
   const left=Math.max(0,st.endsAt-Date.now());const m=Math.floor(left/60000),sec=Math.floor(left/1000)%60;const target=st.queue[st.index%st.queue.length];practiceState.note=target;
   $('#practiceBody').innerHTML=`<div class="card sessionHeader"><div><div class="sectionKicker">ФОКУС · 5 МИНУТ</div><h2>Играем без остановки</h2><p>${st.correct} правильных · ${st.errors||0} ошибок</p></div><div class="sessionTimer" id="sessionClock">${m}:${String(sec).padStart(2,'0')}</div></div><div class="task card"><div class="targetCard"><div class="targetName">${noteName(target)}</div><div class="targetMeta"><span>${noteText(target)}</span><b>Следующая цель откроется автоматически</b></div>${staffSvg([target],target,guessClef(target))}${keyboardHtml(target)}</div><div id="practiceSessionFeedback">${feedbackMarkup('wait','Жду звук',`Сыграй ${noteName(target)}.`)}</div><button class="ghostBtn full" id="hearSession">🔊 Послушать цель</button></div>`;
   $('#hearSession').onclick=()=>playTone(target);updateSessionTimerUI(st);
@@ -1199,5 +1199,388 @@ function renderTuner(){return renderTunerV5()}
 /* remove repeated explanatory blocks from old lesson renderer by using V5 renderer above */
 
 // Ensure old initialization happens only after all V5 replacements exist.
+
+
+/* ===================== PIANO LEARNING V6 AUDIO ENGINE ===================== */
+
+const V6_PITCHY_URL = 'https://esm.sh/pitchy@4';
+let v6Pitchy = null;
+let v6PitchyLoading = null;
+let v6PitchDetector = null;
+let v6LastStable = null;
+let v6StableFrames = [];
+let v6LastRaw = null;
+let v6Live = { midi:null, freq:null, confidence:0, cents:0, rms:0 };
+
+async function loadV6Pitchy(){
+  if(v6Pitchy) return v6Pitchy;
+  if(v6PitchyLoading) return v6PitchyLoading;
+  v6PitchyLoading = import(V6_PITCHY_URL).then(mod=>{
+    v6Pitchy=mod;
+    return mod;
+  }).catch(()=>null);
+  return v6PitchyLoading;
+}
+
+function v6EnsureStats(){
+  state.stats=state.stats||{};
+  state.octavesSeen=state.octavesSeen||{};
+  return state.stats;
+}
+
+function v6MidiFromFreq(freq){
+  return 69+12*Math.log2(freq/440);
+}
+
+function v6FrequencyForMidi(m){
+  return 440*Math.pow(2,(m-69)/12);
+}
+
+function v6DbToLinear(db){ return Math.pow(10, db/20); }
+
+/* Harmonic evidence helps correct the classic piano octave-up error. */
+function v6HarmonicScore(freqData,sr,fftSize,midi){
+  const f0=v6FrequencyForMidi(midi);
+  if(f0<27||f0>1800)return 0;
+  let score=0,total=0;
+  for(let h=1;h<=8;h++){
+    const f=f0*h;
+    if(f>=sr/2)break;
+    const bin=f*fftSize/sr;
+    const center=Math.round(bin);
+    let local=0;
+    for(let d=-2;d<=2;d++){
+      const i=center+d;
+      if(i>=0&&i<freqData.length)local=Math.max(local,v6DbToLinear(freqData[i]));
+    }
+    const w=1/Math.pow(h,.72);
+    score+=local*w;
+    total+=w;
+  }
+  return total?score/total:0;
+}
+
+function v6CorrectOctave(rawMidi,freqData,sr,fftSize){
+  const center=Math.round(rawMidi);
+  const candidates=[center-24,center-12,center,center+12,center+24].filter(m=>m>=21&&m<=108);
+  if(!freqData)return center;
+  let best=center,bestScore=-Infinity;
+  const rawFreq=v6FrequencyForMidi(center);
+  for(const m of candidates){
+    const harmonic=v6HarmonicScore(freqData,sr,fftSize,m);
+    const distance=Math.abs(Math.log2(v6FrequencyForMidi(m)/rawFreq));
+    const prior=distance<.01?1.18:distance===1?1.0:.86;
+    const score=harmonic*prior;
+    if(score>bestScore){bestScore=score;best=m;}
+  }
+  return best;
+}
+
+function detectPitch(buf,sr){
+  let mean=0,rms=0;
+  for(let i=0;i<buf.length;i++)mean+=buf[i];
+  mean/=buf.length;
+  for(let i=0;i<buf.length;i++){const x=buf[i]-mean;rms+=x*x;}
+  rms=Math.sqrt(rms/buf.length);
+  if(rms<.004)return null;
+
+  let rawFreq=null,clarity=0;
+  if(v6Pitchy?.PitchDetector){
+    try{
+      if(!v6PitchDetector||v6PitchDetector.inputLength!==buf.length){
+        v6PitchDetector=v6Pitchy.PitchDetector.forFloat32Array(buf.length);
+      }
+      const [freq,c]=v6PitchDetector.findPitch(buf,sr);
+      if(Number.isFinite(freq)&&freq>=27&&freq<=2100){rawFreq=freq;clarity=c||0;}
+    }catch{}
+  }
+
+  /* Fallback: normalized difference with parabolic interpolation. */
+  if(!rawFreq){
+    const minFreq=27,maxFreq=2100;
+    const minLag=Math.floor(sr/maxFreq),maxLag=Math.min(Math.floor(sr/minFreq),buf.length-2);
+    let bestLag=-1,best=Infinity;
+    for(let lag=minLag;lag<=maxLag;lag+=2){
+      let diff=0,n=0;
+      for(let i=0;i<buf.length-lag;i+=2){const a=buf[i]-mean,b=buf[i+lag]-mean;const d=a-b;diff+=d*d;n++;}
+      if(diff<best){best=diff;bestLag=lag;}
+    }
+    if(bestLag<0)return null;
+    const norm=best/(Math.max(rms*rms*(buf.length-bestLag)*.5,1e-9));
+    clarity=Math.max(0,Math.min(1,1-norm));
+    rawFreq=sr/bestLag;
+  }
+
+  if(clarity<.68)return null;
+  let exact=v6MidiFromFreq(rawFreq);
+  if(!Number.isFinite(exact))return null;
+  let midi=Math.round(exact);
+  const cents=(exact-midi)*100;
+  if(midi<21||midi>108)return null;
+
+  if(mic?.freq){
+    midi=v6CorrectOctave(midi,mic.freq,sr,mic.analyser?.fftSize||buf.length);
+  }
+
+  const correctedFreq=v6FrequencyForMidi(midi);
+  const correctedCents=(v6MidiFromFreq(rawFreq)-midi)*100;
+  return {midi,confidence:clarity,rms,cents:correctedCents,rawFreq,correctedFreq};
+}
+
+function v6ChromaSpectrum(freqData,sr,fftSize){
+  const pc=new Array(12).fill(0);
+  const minBin=Math.max(1,Math.floor(27*fftSize/sr));
+  const maxBin=Math.min(freqData.length-1,Math.ceil(2100*fftSize/sr));
+  for(let bin=minBin;bin<=maxBin;bin++){
+    const f=bin*sr/fftSize;
+    if(f<27||f>2100)continue;
+    const db=freqData[bin];
+    if(!Number.isFinite(db)||db<-78)continue;
+    const amp=v6DbToLinear(db);
+    const midi=v6MidiFromFreq(f);
+    const frac=midi-Math.floor(midi);
+    const nearest=Math.round(midi);
+    const p=((nearest%12)+12)%12;
+    /* Nearby bins are softly distributed to reduce FFT-bin jitter. */
+    const cents=Math.abs(frac-.5)*100;
+    const w=Math.max(.08,1-cents/100)*amp;
+    pc[p]+=w;
+  }
+  return pc;
+}
+
+/* Polyphonic detection: infer pitch classes from the whole spectrum, then
+   compare the observed set with the requested chord. This is deliberately
+   pitch-class based so inversions and different octaves work. */
+function detectChordPitches(freqData,sr,fftSize){
+  if(!freqData)return [];
+  const chroma=v6ChromaSpectrum(freqData,sr,fftSize);
+  const ranked=chroma.map((score,pc)=>({pc,score})).sort((a,b)=>b.score-a.score);
+  if(!ranked.length||ranked[0].score<=0)return [];
+  const top=ranked[0].score;
+  const out=[];
+  for(const item of ranked){
+    if(item.score<top*.34)break;
+    if(out.some(x=>x.pc===item.pc))continue;
+    out.push(item);
+    if(out.length>=4)break;
+  }
+  if(out.length<2)return [];
+  /* Convert pitch classes to representative mid-register MIDI values. */
+  return out.map(x=>60+x.pc).sort((a,b)=>a-b);
+}
+
+async function startMic(){
+  if(mic.stream){toast('Микрофон уже подключён','good');return;}
+  if(!window.isSecureContext){toast('Открой сайт по HTTPS для доступа к микрофону','bad');return;}
+  if(!navigator.mediaDevices?.getUserMedia){toast('Браузер не поддерживает микрофон','bad');return;}
+  try{
+    mic.stream=await navigator.mediaDevices.getUserMedia({
+      audio:{
+        channelCount:1,
+        echoCancellation:false,
+        noiseSuppression:false,
+        autoGainControl:false,
+        latency:0
+      }
+    });
+    mic.ctx=new (window.AudioContext||window.webkitAudioContext)();
+    if(mic.ctx.state==='suspended')await mic.ctx.resume();
+    mic.source=mic.ctx.createMediaStreamSource(mic.stream);
+    mic.analyser=mic.ctx.createAnalyser();
+    mic.analyser.fftSize=8192;
+    mic.analyser.smoothingTimeConstant=.0;
+    mic.source.connect(mic.analyser);
+    mic.freq=new Float32Array(mic.analyser.frequencyBinCount);
+    mic.lastMidi=null;mic.candidateMidi=null;mic.candidateSince=0;mic.lastDispatch=0;mic.lastSeen=0;
+    mic.lastChordSig='';mic.lastChordDispatch=0;mic.ignoreScalarUntil=0;
+    v6StableFrames=[];v6LastStable=null;
+    loadV6Pitchy();
+    micLoop();
+    toast('Микрофон подключён — слушаю пианино','good');
+    render();
+  }catch(e){
+    stopMic();
+    if(e?.name==='NotAllowedError')toast('Разреши микрофон для этого сайта','bad');
+    else if(e?.name==='NotFoundError')toast('Микрофон не найден','bad');
+    else toast('Не удалось подключить микрофон','bad');
+  }
+}
+
+function v6StableResult(result){
+  if(!result)return null;
+  const midi=result.midi;
+  v6StableFrames.push({midi,confidence:result.confidence,cents:result.cents,freq:result.rawFreq});
+  if(v6StableFrames.length>8)v6StableFrames.shift();
+  const counts={};
+  for(const x of v6StableFrames)counts[x.midi]=(counts[x.midi]||0)+1;
+  const best=Object.entries(counts).sort((a,b)=>b[1]-a[1])[0];
+  if(!best)return null;
+  const bestMidi=+best[0],count=+best[1];
+  if(count<3)return null;
+  const same=v6StableFrames.filter(x=>x.midi===bestMidi);
+  const confidence=same.reduce((a,x)=>a+x.confidence,0)/same.length;
+  const cents=same.reduce((a,x)=>a+x.cents,0)/same.length;
+  return {midi:bestMidi,confidence,cents,freq:v6FrequencyForMidi(bestMidi)};
+}
+
+function v6UpdateLive(result){
+  v6Live=result?{midi:result.midi,freq:result.rawFreq,confidence:result.confidence,cents:result.cents,rms:result.rms}:v6Live;
+  const el=$('#micLive');
+  if(!el)return;
+  if(!result){el.innerHTML='<span class="micLiveDot"></span><b>Слушаю…</b><small>Сыграй одну ноту на синтезаторе</small>';return;}
+  el.innerHTML=`<span class="micLiveDot good"></span><b>${noteText(result.midi)}</b><small>${Math.round(result.rawFreq)} Hz · уверенность ${Math.round(result.confidence*100)}% · ${result.cents>=0?'+':''}${Math.round(result.cents)}¢</small>`;
+}
+
+function micLoop(){
+  if(!mic.analyser)return;
+  const buf=new Float32Array(mic.analyser.fftSize);
+  mic.analyser.getFloatTimeDomainData(buf);
+  mic.analyser.getFloatFrequencyData(mic.freq);
+  const now=performance.now();
+  const chordContext=(route==='practice'&&practiceState.tab==='chords')||(route==='lesson'&&runtime&&(runtime.type==='chord'||runtime.type==='song'&&runtime.songKind==='chord'));
+
+  if(chordContext){
+    const poly=detectChordPitches(mic.freq,mic.ctx.sampleRate,mic.analyser.fftSize);
+    if(poly.length>=2){
+      const sig=poly.map(pitchClass).sort((a,b)=>a-b).join(',');
+      if(sig!==mic.lastChordSig||now-mic.lastChordDispatch>650){
+        mic.lastChordSig=sig;mic.lastChordDispatch=now;mic.ignoreScalarUntil=now+260;onChordDetected(poly);
+      }
+    }
+  }
+
+  const result=now<mic.ignoreScalarUntil?null:detectPitch(buf,mic.ctx.sampleRate);
+  if(result){
+    mic.lastSeen=now;
+    v6UpdateLive(result);
+    const stable=v6StableResult(result);
+    if(stable){
+      const m=stable.midi;
+      if(m===mic.candidateMidi){
+        if(!mic.candidateSince)mic.candidateSince=now;
+        const held=now-mic.candidateSince,repeatGap=now-mic.lastDispatch;
+        if(held>=110&&(m!==mic.lastMidi||repeatGap>900)){
+          mic.lastMidi=m;mic.lastDispatch=now;
+          markOctaveSeen(m);
+          onDetected(m,{rms:result.rms,confidence:stable.confidence,cents:stable.cents,freq:result.rawFreq});
+        }
+      }else{
+        mic.candidateMidi=m;mic.candidateSince=now;
+      }
+    }
+  }else{
+    v6UpdateLive(null);
+    if(mic.lastSeen&&now-mic.lastSeen>180){
+      mic.candidateMidi=null;mic.candidateSince=0;mic.lastMidi=null;v6StableFrames=[];
+    }
+  }
+  mic.raf=requestAnimationFrame(micLoop);
+}
+
+/* Better month calendar: one month at a time, green activity cells. */
+let v6CalendarDate=new Date();
+function renderCalendar(){
+  const overlay=$('#calendarOverlay');if(!overlay)return;
+  const y=v6CalendarDate.getFullYear(),m=v6CalendarDate.getMonth();
+  const monthName=new Intl.DateTimeFormat('ru-RU',{month:'long',year:'numeric'}).format(new Date(y,m,1));
+  const first=new Date(y,m,1),daysIn=new Date(y,m+1,0).getDate();
+  let start=(first.getDay()+6)%7;
+  const today=new Date();
+  const cells=[];
+  for(let i=0;i<start;i++)cells.push('<div class="calendarCell empty"></div>');
+  for(let d=1;d<=daysIn;d++){
+    const date=new Date(y,m,d),key=todayKeyFromDate(date),xp=Number(state.activityDays?.[key]||0);
+    const isToday=date.toDateString()===today.toDateString();
+    cells.push(`<div class="calendarCell ${xp?'hasActivity':''} ${isToday?'today':''}"><b>${d}</b>${xp?`<small>${xp} XP</small>`:''}</div>`);
+  }
+  overlay.innerHTML=`<div class="calendarBackdrop" id="calendarBackdrop"></div><div class="calendarDialog card"><div class="calendarHead"><div><div class="sectionKicker">АКТИВНОСТЬ</div><h2>${monthName.charAt(0).toUpperCase()+monthName.slice(1)}</h2><p>Зелёный день — ты занимался или прошёл урок.</p></div><button class="backBtn" id="calClose">×</button></div><div class="calendarNav"><button id="calPrev">‹</button><strong>${monthName.charAt(0).toUpperCase()+monthName.slice(1)}</strong><button id="calNext">›</button></div><div class="calendarWeekdays">${['Пн','Вт','Ср','Чт','Пт','Сб','Вс'].map(x=>`<span>${x}</span>`).join('')}</div><div class="calendarGrid">${cells.join('')}</div><div class="calendarLegend"><span><i class="legendDot"></i> активность</span><span>${Object.keys(state.activityDays||{}).filter(k=>k.startsWith(`${y}-${String(m+1).padStart(2,'0')}`)).length} активных дней</span></div></div>`;
+  overlay.className='calendarOverlay show';
+  $('#calClose').onclick=()=>overlay.className='calendarOverlay';$('#calendarBackdrop').onclick=()=>overlay.className='calendarOverlay';
+  $('#calPrev').onclick=()=>{v6CalendarDate=new Date(y,m-1,1);renderCalendar()};
+  $('#calNext').onclick=()=>{v6CalendarDate=new Date(y,m+1,1);renderCalendar()};
+}
+
+/* 50+ achievements, with only 12 hidden. */
+const V6_ACHIEVEMENTS=[
+ ['first','🎹','Первая нота','Завершить первый урок'],['five','🌱','Первые шаги','Завершить 5 уроков'],['ten','🔥','Разогрев','Завершить 10 уроков'],['twenty','📚','В ритме','Завершить 20 уроков'],['thirty','🧠','Читаю музыку','Завершить 30 уроков'],['forty','🎼','Музыкальная база','Завершить 40 уроков'],['fifty','🚀','Половина пути','Завершить 50 уроков'],['seventyfive','💫','Большой прогресс','Завершить 75 уроков'],['hundred','🏅','Последняя прямая','Завершить 100 уроков'],['course','👑','Финальный аккорд','Завершить весь курс'],
+ ['xp100','⚡','100 XP','Набрать 100 XP'],['xp500','💎','500 XP','Набрать 500 XP'],['xp1000','🏆','1000 XP','Набрать 1000 XP'],['xp2500','🌟','2500 XP','Набрать 2500 XP'],['xp5000','💠','5000 XP','Набрать 5000 XP'],
+ ['day3','🔥','Три дня','Заниматься 3 дня'],['day7','🗓️','Неделя','Заниматься 7 дней'],['day14','🌙','Две недели','Заниматься 14 дней'],['day30','☀️','Месяц','Заниматься 30 дней'],
+ ['song1','🎵','Первая песня','Потренироваться с первой песней'],['songs3','🎶','Три мелодии','Потренироваться с 3 песнями'],['songs10','🎻','Репертуар','Потренироваться с 10 песнями'],['favorite','❤️','Любимые','Добавить песню в избранное'],
+ ['mistake','🛠️','Не сдался','Исправить ошибку и пройти дальше'],['chords','⌬','Аккорд за аккордом','Потренироваться с аккордами'],['ear','👂','Слышу','Пройти тренировку слуха'],['tuner','🎯','Точно в центр','Поймать ноту тюнером'],['fiveOct','🌈','Пять регистров','Сыграть ноты в 1–5 октавах'],['perfect10','✨','Чистая серия','10 целей без ошибки'],['warmup','⏱️','Разогрев','Завершить 3-минутную разминку'],
+ ['hidden1','🔮','?','Секрет','hidden'],['hidden2','🗝️','?','Секрет','hidden'],['hidden3','🌌','?','Секрет','hidden'],['hidden4','🪄','?','Секрет','hidden'],['hidden5','🧩','?','Секрет','hidden'],['hidden6','🛰️','?','Секрет','hidden'],['hidden7','🕰️','?','Секрет','hidden'],['hidden8','🎯','?','Секрет','hidden'],['hidden9','🦾','?','Секрет','hidden'],['hidden10','🎹','?','Секрет','hidden'],['hidden11','🌠','?','Секрет','hidden'],['hidden12','👑','?','Секрет','hidden']
+];
+function v6AchievementList(){
+ const days=Object.keys(state.activityDays||{}).length,songs=Object.keys(state.songProgress||{}).filter(k=>(state.songProgress[k]?.best||0)>0).length;
+ const s=v6EnsureStats();
+ const cond={first:()=>completedCount()>=1,five:()=>completedCount()>=5,ten:()=>completedCount()>=10,twenty:()=>completedCount()>=20,thirty:()=>completedCount()>=30,forty:()=>completedCount()>=40,fifty:()=>completedCount()>=50,seventyfive:()=>completedCount()>=75,hundred:()=>completedCount()>=100,course:()=>completedCount()>=115,xp100:()=>state.xp>=100,xp500:()=>state.xp>=500,xp1000:()=>state.xp>=1000,xp2500:()=>state.xp>=2500,xp5000:()=>state.xp>=5000,day3:()=>days>=3,day7:()=>days>=7,day14:()=>days>=14,day30:()=>days>=30,song1:()=>songs>=1,songs3:()=>songs>=3,songs10:()=>songs>=10,favorite:()=>Array.isArray(state.favorites)&&state.favorites.length>=1,mistake:()=>Object.keys(state.mistakes||{}).length>=1&&completedCount()>=2,chords:()=>Number(s.chords||0)>=1,ear:()=>Number(s.ear||0)>=1,tuner:()=>Number(s.tuner||0)>=1,fiveOct:()=>Object.keys(state.octavesSeen||{}).length>=5,perfect10:()=>Number(s.perfectRun||0)>=10,warmup:()=>Number(s.warmup||0)>=1};
+ return V6_ACHIEVEMENTS.map(a=>({id:a[0],icon:a[1],title:a[2],desc:a[3],hidden:a[4]==='hidden',ok:cond[a[0]]?!!cond[a[0]]():false}));
+}
+function achievementList(){return v6AchievementList()}
+
+/* 3-minute warm-up. */
+let v6WarmupTimer=0;
+function v6StartWarmup(){
+ const now=Date.now();
+ practiceState.warmup={started:true,endsAt:now+180000,correct:0,errors:0,index:0,queue:[],finished:false};
+ v6WarmupTimer=setInterval(()=>{if(!practiceState.warmup)return;if(Date.now()>=practiceState.warmup.endsAt){practiceState.warmup.finished=true;clearInterval(v6WarmupTimer);v6WarmupTimer=0;v6EnsureStats().warmup=(v6EnsureStats().warmup||0)+1;awardXP(25);save();renderPractice()}else{const el=$('#warmupClock');if(el){const left=Math.max(0,practiceState.warmup.endsAt-Date.now());el.textContent=`${Math.floor(left/60000)}:${String(Math.floor(left/1000)%60).padStart(2,'0')}`}}},250);
+ practiceState.tab='session';practiceState.note=randomPracticeMidi();renderPractice();
+}
+function v6RenderWarmup(){
+ const w=practiceState.warmup;
+ if(!w||!w.started){return `<div class="practiceCard card warmupCard"><div class="sectionKicker">РАЗМИНКА</div><h2>3 минуты нот</h2><p>Никаких пауз: сыграй цель, получи следующую и просто разогрей руки. Ноты меняются по всему диапазону 1–5 октав.</p><button class="primary full" id="startWarmup">▶ Начать 3 минуты</button></div>`;}
+ if(w.finished){return `<div class="completeHero card"><div class="completeIcon">✓</div><div class="eyebrow">РАЗМИНКА · 3 МИНУТЫ</div><h2>Разминка завершена</h2><p>${w.correct} правильных · ${w.errors} ошибок.</p><div class="reward">+25 XP</div><button class="primary full" id="restartWarmup">Новая разминка</button></div>`;}
+ const target=practiceState.note??randomPracticeMidi();practiceState.note=target;
+ return `<div class="card sessionHeader"><div><div class="sectionKicker">РАЗМИНКА · 3 МИНУТЫ</div><h2>Играй без остановки</h2><p>${w.correct} правильных · ${w.errors} ошибок</p></div><div class="sessionTimer" id="warmupClock">3:00</div></div><div class="practiceCard card"><div class="practiceTarget"><span>ЦЕЛЬ</span><b>${noteName(target)}</b><small>${noteText(target)}</small></div>${staffSvg([target],target,guessClef(target))}${keyboardHtml(target)}<div id="practiceSessionFeedback">${feedbackMarkup('wait','Жду звук',`Сыграй ${noteText(target)}.`)}</div><button class="secondary full" id="warmupHear">🔊 Эталон</button></div>`;
+}
+
+function renderPractice(){
+ const tab=practiceState.tab||'notes';
+ $('#practice').innerHTML=`${header('Практика','home','ТРЕНАЖЁР')}<div class="practiceTabs">${[['notes','Ноты'],['chords','Аккорды'],['ear','Слух'],['tuner','Тюнер'],['weak','Слабые места'],['session','⚡ 3 минуты']].map(x=>`<button class="practiceTab ${tab===x[0]?'active':''}" data-practice="${x[0]}">${x[1]}</button>`).join('')}</div><div class="practiceExplain card"><b>${tab==='tuner'?'Тюнер — проверка высоты звука.':tab==='chords'?'Аккорды — несколько нот одновременно.':tab==='ear'?'Здесь тренируется слух без названия ноты.':tab==='session'?'Три минуты непрерывной разминки.':'Микрофон слушает реальный звук твоего синтезатора.'}</b><span>${tab==='tuner'?'Центр шкалы = точная высота.':tab==='chords'?'Можно сыграть три ноты почти одновременно.':tab==='session'?'Цель меняется после каждой правильной ноты.':'Стабильная нота подтверждается несколькими кадрами, чтобы случайная ошибка не засчитывалась.'}</span></div><div class="micLive card" id="micLive"><span class="micLiveDot"></span><b>${mic.stream?'Слушаю…':'Микрофон не подключён'}</b><small>${mic.stream?'Сыграй одну ноту для проверки':'Нажми «Подключить микрофон» на главной'}</small></div><div id="practiceContent"></div>`;
+ $$('[data-practice]').forEach(b=>b.onclick=()=>{practiceState.tab=b.dataset.practice;renderPractice()});
+ const box=$('#practiceContent');
+ if(tab==='notes')box.innerHTML=renderPracticeNotesV5();
+ else if(tab==='chords')box.innerHTML=renderPracticeChordsV5();
+ else if(tab==='ear')box.innerHTML=renderPracticeEarV5();
+ else if(tab==='tuner')box.innerHTML=renderTunerV5();
+ else if(tab==='session')box.innerHTML=v6RenderWarmup();
+ else box.innerHTML=renderWeakV5();
+ if(tab==='session'){
+   if(!practiceState.warmup||!practiceState.warmup.started)$('#startWarmup').onclick=v6StartWarmup;
+   else if(practiceState.warmup.finished)$('#restartWarmup').onclick=()=>{practiceState.warmup=null;practiceState.note=null;renderPractice()};
+   else {$('#warmupHear').onclick=()=>playTone(practiceState.note);const left=Math.max(0,practiceState.warmup.endsAt-Date.now());$('#warmupClock').textContent=`${Math.floor(left/60000)}:${String(Math.floor(left/1000)%60).padStart(2,'0')}`}
+ } else bindPracticeV5(tab);
+}
+
+function handlePracticeDetection(m,meta){
+ if(practiceState.tab==='session'&&practiceState.warmup?.started&&!practiceState.warmup.finished){
+   const w=practiceState.warmup,t=practiceState.note;
+   if(pitchClass(m)===pitchClass(t)){w.correct++;practiceState.note=randomPracticeMidi();flashKeys([m],true);save();renderPractice();}
+   else{w.errors++;state.mistakes=state.mistakes||{};state.mistakes[m]=(state.mistakes[m]||0)+1;save();const el=$('#practiceSessionFeedback');if(el)el.innerHTML=feedbackMarkup('bad','Почти',`Услышана ${noteText(m)}. Нужна ${noteText(t)}.`);flashKeys([m],false);}
+   return;
+ }
+ if(practiceState.tab==='tuner'){handleTunerDetected(m,meta);return;}
+ if(practiceState.tab==='notes'||practiceState.tab==='weak'){
+   const t=practiceState.note;if(t==null)return;
+   const ok=pitchClass(m)===pitchClass(t);
+   if(ok){practiceState.notePassed=true;markActive();$('#practiceFeedback').innerHTML=feedbackMarkup('good','Верно!',`Услышана ${noteText(m)}. Октава здесь не важна.`);flashKeys([m],true)}
+   else{state.mistakes=state.mistakes||{};state.mistakes[m]=(state.mistakes[m]||0)+1;save();const el=$('#practiceFeedback');if(el)el.innerHTML=feedbackMarkup('bad','Попробуй ещё',`Услышана ${noteText(m)}. Нужна ${noteName(t)}.`);flashKeys([m],false)}
+   return;
+ }
+ /* chord and ear continue through the existing handlers */
+ if(practiceState.tab==='chords'){handlePracticeChordDetected([m]);}
+}
+
+/* Soft page transitions. */
+function v6Go(next){
+ const old=$('.screen.active');
+ if(old){old.classList.add('screenLeaving');setTimeout(()=>old.classList.remove('screenLeaving'),240)}
+ go(next);
+ const fresh=$('.screen.active');if(fresh){fresh.classList.remove('screenEntering');void fresh.offsetWidth;fresh.classList.add('screenEntering');setTimeout(()=>fresh.classList.remove('screenEntering'),360)}
+}
+$$('[data-nav]').forEach(b=>b.onclick=()=>v6Go(b.dataset.nav));
+$('#brand').onclick=()=>v6Go('home');
+
+/* Override navigation only; all existing lesson/song logic remains intact. */
 
 ensureDay();render();
