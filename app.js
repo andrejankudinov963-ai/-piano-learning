@@ -28,7 +28,7 @@ const MODULES = [
 ];
 
 const LESSON_TITLES = [
-  'Старт: что делать на первом уроке','Белые и чёрные клавиши','Находим ДО по двум чёрным','Пять пальцев: ДО–СОЛЬ','Переставляем пальцы спокойно','Правая рука: позиция ДО–СОЛЬ','Левая рука: позиция ДО–СОЛЬ','Точки-ориентиры по всей клавиатуре','Пять пальцев вверх и вниз','Первая короткая мелодия',
+  'Старт: что делать на первом уроке','Октава: как устроена клавиатура','Находим ДО по двум чёрным','Пять пальцев: ДО–СОЛЬ','Переставляем пальцы спокойно','Правая рука: позиция ДО–СОЛЬ','Левая рука: позиция ДО–СОЛЬ','Точки-ориентиры по всей клавиатуре','Пять пальцев вверх и вниз','Первая короткая мелодия',
   'Что такое пульс','Считаем 1–2–3–4','Долгий и короткий звук','Пауза — это тоже музыка','Ровный пульс на одной ноте','Две длительности в одной фразе','Сильная и слабая доля','Метроном: первый уверенный круг','Ритмический рисунок без смены нот','Мелодия с пульсом',
   'Нотный стан: карта высоты','Скрипичный ключ: где живёт СОЛЬ','Басовый ключ: где живёт ФА','Среднее ДО как мост между ключами','МИ на стане','СОЛЬ на стане','ФА и ЛЯ в басу','Читаем направление нот','Шаг вверх и шаг вниз','Через одну ноту','Четыре ноты без подсказки','Не путаем линию и промежуток','Читаем маленькую фразу','Правая рука читает','Левая рука читает',
   'Расстояние между нотами: что это','Секунда — один шаг между нотами','Терция — прыжок через одну','Кварта — четыре ступени','Квинта — пять ступеней','Вверх и вниз','Повтор звука против движения','Одинаковый рисунок выше','Вопрос и ответ','Мини-этюд на интервалы',
@@ -37,7 +37,7 @@ const LESSON_TITLES = [
   'Независимость пальцев','Четыре звука ровно','Чистота важнее скорости','Метроном: добавляем темп','Контроль силы удара','Легато: связная линия','Стаккато: лёгкий отрыв','Акцент на первой ноте','Три уровня громкости','Короткая техническая связка',
   'Левая рука как бас','Бас + аккорд','Простой вальсовый рисунок','Мелодия справа, бас слева','Мелодия справа, аккорд слева','Не ускоряемся при смене рук','Баланс двух рук','Повторяющийся рисунок левой руки','Держим повторяющийся рисунок','Собираем восьмитактовую фразу',
   'Фраза как предложение','Где закончить музыкальную мысль','Тише внутри фразы','Вершина фразы','Педаль: зачем она','Смена педали без каши','Нота между долями','Три ноты на один пульс',
-  'Как заниматься 13 минуты','Как разбирать песню по кусочкам','Песня: понимаем схему обучения','Песня: узнаём первую ноту','Песня: первая мини-фраза правой','Песня: ещё одна мини-фраза','Песня: левая рука отдельно','Песня: соединяем два фрагмента','Песня: четыре ноты без спешки','Песня: добавляем пульс','Песня: убираем одну подсказку','Песня: играем связку целиком','Песня: аккорд и мелодия вместе','Песня: пробный прогон','Финал курса: сложный музыкальный проект'
+  'Как заниматься 13 минут','Как разбирать песню по кусочкам','Песня: понимаем схему обучения','Песня: узнаём первую ноту','Песня: первая мини-фраза правой','Песня: ещё одна мини-фраза','Песня: левая рука отдельно','Песня: соединяем два фрагмента','Песня: четыре ноты без спешки','Песня: добавляем пульс','Песня: убираем одну подсказку','Песня: играем связку целиком','Песня: аккорд и мелодия вместе','Песня: пробный прогон','Финал курса: сложный музыкальный проект'
 ];
 
 const SONGS = [
@@ -81,6 +81,27 @@ const SONGS = [
   {id:'howl',title:'Merry-Go-Round of Life',author:'Joe Hisaishi',difficulty:'Продвинуто',level:4,category:'Аниме',icon:'🎠',colorClass:'carousel',video:null,videoLabel:'Найти tutorial',desc:'Большой финальный проект на баланс и выразительность.',tags:['две руки','фразировка'],fragment:[60,64,67,69,67,64,62,60]},
   {id:'yourname',title:'Your Name — Sparkle',author:'RADWIMPS',difficulty:'Продвинуто',level:4,category:'Аниме',icon:'✨',colorClass:'star',video:null,videoLabel:'Найти tutorial',desc:'Выразительная мелодия с более сложной координацией.',tags:['две руки','динамика'],fragment:[64,67,69,72,71,69,67,64]}
 ];
+
+
+/* V7 library expansion: 50 song projects. These entries intentionally carry
+   no invented 'exact' transcription. Use the per-song MIDI importer for the
+   precise arrangement you want to teach. */
+SONGS.push(
+  {id:'unravel',title:'unravel',author:'TK from Ling tosite sigure',difficulty:'Средне',level:3,category:'Аниме',icon:'🕸️',colorClass:'shadow',video:null,videoLabel:'Найти tutorial',desc:'Один из самых узнаваемых аниме-проектов. Для точного разбора загрузите MIDI нужной аранжировки.',tags:['аниме','мелодия'],fragment:[64,67,69,71,69,67,64,62]},
+  {id:'gurenge',title:'Gurenge',author:'LiSA',difficulty:'Средне',level:3,category:'Аниме',icon:'🔥',colorClass:'ember',video:null,videoLabel:'Найти tutorial',desc:'Энергичный проект с акцентами. Точную партию можно загрузить через MIDI.',tags:['аниме','ритм'],fragment:[64,64,67,69,67,64,62,60]},
+  {id:'bluebird',title:'Blue Bird',author:'Ikimono-gakari',difficulty:'Средне',level:3,category:'Аниме',icon:'🐦',colorClass:'sky',video:null,videoLabel:'Найти tutorial',desc:'Быстрая мелодия для тренировки ровности и координации.',tags:['аниме','скорость'],fragment:[67,69,71,72,71,69,67,65]},
+  {id:'crossingfield',title:'Crossing Field',author:'LiSA',difficulty:'Средне',level:3,category:'Аниме',icon:'⚔️',colorClass:'blade',video:null,videoLabel:'Найти tutorial',desc:'Мелодический проект с устойчивым пульсом и переходами.',tags:['аниме','мелодия'],fragment:[64,67,69,72,71,69,67,64]},
+  {id:'cruelangel',title:'A Cruel Angel’s Thesis',author:'Yoko Takahashi',difficulty:'Средне',level:3,category:'Аниме',icon:'👼',colorClass:'angel',video:null,videoLabel:'Найти tutorial',desc:'Классика аниме-опенингов. Точная версия зависит от аранжировки.',tags:['аниме','ритм'],fragment:[60,62,64,67,69,67,64,62]},
+  {id:'hikaranara',title:'Hikaru Nara',author:'Goose house',difficulty:'Средне',level:3,category:'Аниме',icon:'🌸',colorClass:'sakura',video:null,videoLabel:'Найти tutorial',desc:'Светлый проект на лёгкую артикуляцию и быстрые смены.',tags:['аниме','артикуляция'],fragment:[62,64,67,69,67,65,64,62]},
+  {id:'againfma',title:'Again',author:'YUI',difficulty:'Средне',level:3,category:'Аниме',icon:'🔁',colorClass:'again',video:null,videoLabel:'Найти tutorial',desc:'Мелодия с чётким пульсом и запоминающимися фразами.',tags:['аниме','ритм'],fragment:[64,65,67,69,67,65,64,60]},
+  {id:'onesummersday',title:'One Summer’s Day',author:'Joe Hisaishi',difficulty:'Продвинуто',level:4,category:'Кино',icon:'🌤️',colorClass:'summer',video:null,videoLabel:'Найти tutorial',desc:'Выразительная тема для фразировки, баланса и педали.',tags:['кино','педаль'],fragment:[60,64,67,72,69,65,64,60]},
+  {id:'windforest',title:'The Path of the Wind',author:'Joe Hisaishi',difficulty:'Средне',level:3,category:'Кино',icon:'🌬️',colorClass:'wind',video:null,videoLabel:'Найти tutorial',desc:'Плавная тема для легато и мягкой динамики.',tags:['кино','легато'],fragment:[60,62,64,67,65,64,62,60]},
+  {id:'zeldalullaby',title:'Zelda’s Lullaby',author:'Koji Kondo',difficulty:'Средне',level:3,category:'Игры',icon:'🪽',colorClass:'hyrule',video:null,videoLabel:'Найти tutorial',desc:'Спокойная игровая тема для чтения и фразировки.',tags:['игры','мелодия'],fragment:[62,65,67,69,67,65,62,60]},
+  {id:'dragonborn',title:'Dragonborn Comes',author:'The Elder Scrolls V: Skyrim',difficulty:'Средне',level:3,category:'Игры',icon:'🐉',colorClass:'dragon',video:null,videoLabel:'Найти tutorial',desc:'Тема для басовой опоры и мощного пульса.',tags:['игры','бас'],fragment:[60,60,67,65,64,62,60,55]},
+  {id:'lastofus',title:'The Last of Us — Theme',author:'Gustavo Santaolalla',difficulty:'Продвинуто',level:4,category:'Игры',icon:'🎸',colorClass:'lastofus',video:null,videoLabel:'Найти tutorial',desc:'Медленный выразительный проект на повторяющиеся рисунки.',tags:['игры','фразировка'],fragment:[60,64,67,69,67,64,62,60]},
+  {id:'beneathmask',title:'Beneath the Mask',author:'Shoji Meguro',difficulty:'Средне',level:3,category:'Игры',icon:'🎭',colorClass:'mask',video:null,videoLabel:'Найти tutorial',desc:'Спокойный грув для контроля пульса и аккордов.',tags:['игры','аккорды'],fragment:[60,64,67,65,64,62,60,62]},
+  {id:'tloztheme',title:'The Legend of Zelda — Main Theme',author:'Koji Kondo',difficulty:'Средне',level:3,category:'Игры',icon:'🟩',colorClass:'zelda',video:null,videoLabel:'Найти tutorial',desc:'Энергичная тема для ритма и смены регистров.',tags:['игры','ритм'],fragment:[64,67,69,72,71,69,67,64]}
+)
 
 const START_SEQUENCES = [
   [60],[60,62],[60,62,64],[60,64,67],[60,62,64,62,60],[62,64,65,64,62],[64,62,60,62,64],[60,64,62,65,64,60]
@@ -1077,7 +1098,7 @@ function renderHome(){
  const done=completedCount(),next=nextLesson()||COURSE_SIZE,lvl=userLevel(),pct=levelProgress(),ach=achievementList().filter(a=>a.ok).length,days=Object.keys(state.activityDays||{}).length;
  const module=moduleFor(next), micReady=!!mic.stream;
  $('#home').innerHTML=`<div class="homeHero v5Hero"><div class="heroTopline"><span class="heroBadge">✦</span><span class="microLabel">PIANO LEARNING · УРОВЕНЬ ${lvl}</span></div><div class="eyebrow">115 последовательных уроков</div><h1>Играй.<br><em>Понимай.</em><br>Становись лучше.</h1><p>Каждый урок даёт одну новую идею, короткую практику и понятный результат. Никаких повторяющихся простыней текста.</p><div class="heroActions"><button class="primary" id="homeStart">▶ ${done?'Продолжить курс':'Начать курс'}</button><button class="secondary" id="homeMic">${micReady?'✓ Микрофон подключён':'🎙 Подключить микрофон'}</button></div><div class="statusLine ${micReady?'ok':''}"><span class="statusDot"></span>${micReady?'Микрофон готов — можно играть на настоящем инструменте.':'Для уроков с проверкой звука подключи микрофон телефона.'}</div></div>
- <div class="dashboardGrid"><button class="levelCard card clickable" id="openLevel"><div class="dashIcon">⭐</div><div><div class="sectionKicker">УРОВЕНЬ</div><b>${lvl}</b><small>${state.xp} XP · ${100-pct} до следующего</small></div><div class="miniProgress"><i style="width:${pct}%"></i></div></button><button class="miniFeature card clickable" id="openAchievements"><span>🏆</span><div><b>Достижения</b><small>${ach} из ${V5_ACHIEVEMENTS.length} открыто</small></div><strong>›</strong></button></div>
+ <div class="dashboardGrid"><button class="levelCard card clickable" id="openLevel"><div class="dashIcon">⭐</div><div><div class="sectionKicker">УРОВЕНЬ</div><b>${lvl}</b><small>${state.xp} XP · ${100-pct} до следующего</small></div><div class="miniProgress"><i style="width:${pct}%"></i></div></button><button class="miniFeature card clickable" id="openAchievements"><span>🏆</span><div><b>Достижения</b><small>${ach} из ${v6AchievementList().length} открыто</small></div><strong>›</strong></button></div>
  <button class="nextLessonCard clickable" id="continueCard"><div class="nextIcon">${module.icon}</div><div><div class="microLabel">СЛЕДУЮЩИЙ УРОК · ${next}</div><h2>${escapeHtml(LESSON_TITLES[next-1])}</h2><p>${escapeHtml(module.name)} · +${xpFor(next)} XP</p></div><span class="arrow">›</span></button>
  <div class="progressCard card"><div class="progressTop"><span>Прогресс курса</span><b>${done} / ${COURSE_SIZE}</b></div><div class="progressTrack"><i style="width:${done/COURSE_SIZE*100}%"></i></div><div class="progressMeta"><span>${state.xp} XP всего</span><span>${days} активных дней</span><button id="openCalendarInline">📅 Календарь</button></div></div>
  <div class="homeTiles"><button class="tile clickable" data-go="course"><span>▦</span><b>Курс</b><small>10 этапов · 115 уроков</small></button><button class="tile clickable" data-go="practice"><span>◎</span><b>Практика</b><small>Ноты · аккорды · слух · тюнер</small></button><button class="tile clickable" data-go="songs"><span>♪</span><b>Песни</b><small>${SONGS.length} учебных проектов</small></button></div>
@@ -1584,3 +1605,522 @@ $('#brand').onclick=()=>v6Go('home');
 /* Override navigation only; all existing lesson/song logic remains intact. */
 
 ensureDay();render();
+
+
+/* =======================================================================
+   PIANO LEARNING V7 — FINAL EXPERIENCE LAYER
+   This is one app.js file. No external patch file is required.
+   ======================================================================= */
+
+/* ---------- 1) More useful lesson theory, same page structure ---------- */
+LESSON_TITLES[1] = 'Октава: как устроена клавиатура';
+LESSON_TITLES[2] = 'Находим ДО по двум чёрным клавишам';
+
+const V7_THEORY_EXTRA = {
+  octave: 'Октава — это расстояние от одной ноты до такой же ноты выше или ниже. Между, например, ДО и следующим ДО находится 12 полутонов и семь белых нот: ДО, РЕ, МИ, ФА, СОЛЬ, ЛЯ, СИ. На пятиоктавном синтезаторе ты увидишь один и тот же рисунок снова и снова, только выше или ниже.',
+  black: 'Чёрные клавиши идут группами по две и по три. Это не случайный рисунок: он повторяется на каждой октаве и помогает быстро определить белые клавиши вокруг него. ДО всегда находится непосредственно слева от группы из двух чёрных клавиш.',
+  finger: 'Номера пальцев нужны не ради красивых цифр, а чтобы повторять одно и то же движение без путаницы. Большой палец — 1, указательный — 2, средний — 3, безымянный — 4, мизинец — 5.',
+  pulse: 'Пульс можно представить как ровные шаги: 1–2–3–4. Ноты могут быть короткими, длинными или попадать между шагами, но внутренний счёт остаётся устойчивым.',
+  staff: 'Нотный стан показывает не клавишу напрямую, а высоту звука. Чем выше положение ноты на стане, тем выше её звучание; ключ задаёт ориентиры, по которым мы читаем эти позиции.',
+  interval: 'Интервалы помогают видеть не отдельные символы, а движение между ними. Если следующая нота рядом, это небольшой шаг; если она заметно выше или ниже, глаз должен заранее подготовиться к скачку.',
+  chord: 'В трезвучии три звука образуют одну гармоническую форму. В мажоре между корнем и средней нотой четыре полутона, в миноре — три. Именно это небольшое изменение заметно меняет характер звучания.',
+  scale: 'Гамма — это последовательность ступеней внутри тональности. Она нужна не только для скорости: она учит порядок нот, подготовку большого пальца и ощущение направления.',
+  technique: 'Техника — это способ сделать движение предсказуемым. Сначала мозг и пальцы учатся повторять одинаковый жест, и только после этого можно безопасно добавлять темп.',
+  hands: 'Когда работают две руки, им не обязательно повторять одно и то же. Обычно правая ведёт мелодию, а левая даёт бас или гармонию. Поэтому полезно сначала понимать роль каждой руки отдельно.',
+  musical: 'Музыкальность начинается там, где ты специально решаешь, что слушатель должен услышать впереди, а что — оставить фоном. Громкость, фразировка, акцент и педаль работают вместе, а не по отдельности.',
+  song: 'Песню удобнее изучать слоями: услышать, понять маленький кусок, сыграть одной рукой, добавить вторую, соединить с ритмом и только потом играть целиком. Так новая информация не перегружает память.'
+};
+
+const V7_BASE_THEORY = window.theoryForDisplay;
+window.theoryForDisplay = function(r){
+  const d = V7_BASE_THEORY ? V7_BASE_THEORY(r) : {title:r.title,body:r.theory||'',plain:r.tip||'',prereq:''};
+  const t = (r.title||'').toLowerCase();
+  let extra = '';
+  if(r.n===2) extra = V7_THEORY_EXTRA.octave;
+  else if(/чёрн|две чёрн|три чёрн/.test(t)) extra = V7_THEORY_EXTRA.black;
+  else if(/пальц|апплик/.test(t) || r.type==='scale') extra = V7_THEORY_EXTRA.finger;
+  else if(/пульс|дол|метроном|ритм/.test(t) || r.type==='rhythm') extra = V7_THEORY_EXTRA.pulse;
+  else if(/нотн|ключ|линия|промеж|стан|читать|чита/.test(t) || r.type==='reading') extra = V7_THEORY_EXTRA.staff;
+  else if(/интервал|секунд|терц|кварт|квинт|движен|скач/.test(t) || r.type==='interval') extra = V7_THEORY_EXTRA.interval;
+  else if(/аккорд|мажор|минор|трезвуч/.test(t) || r.type==='chord' || r.type==='chordEar') extra = V7_THEORY_EXTRA.chord;
+  else if(r.type==='technique') extra = V7_THEORY_EXTRA.technique;
+  else if(r.type==='hands') extra = V7_THEORY_EXTRA.hands;
+  else if(r.type==='musical') extra = V7_THEORY_EXTRA.musical;
+  else if(r.type==='song') extra = V7_THEORY_EXTRA.song;
+  if(r.n===2){
+    d.title='Что такое октава?';
+    d.body='На пианино одна и та же последовательность из семи белых нот повторяется снова и снова. Расстояние от ДО до следующего ДО называется одной октавой. Поэтому ДО 2-й и ДО 4-й — это одна и та же нота по имени, но разные регистры: четвёртый ДО звучит выше второго.';
+    d.plain='Сначала найди группу из двух чёрных клавиш. Слева от неё — ДО. Сдвинься к следующему такому же ДО — ты перешёл на одну октаву.';
+  }
+  if(extra && !d.body.includes(extra)) d.body = `${d.body||''} ${extra}`.trim();
+  return d;
+};
+
+/* ---------- 2) Course targets are deliberate across octaves 1–5 ---------- */
+const V7_BASE_BUILD_LESSON = window.buildLesson;
+function v7CourseSteps(n, original){
+  const pcs=[0,2,4,5,7,9,11];
+  const o = x => 12*(x+1);
+  const mk = (oct, pc) => o(oct)+pc;
+  if(n===2) return [mk(4,0),mk(5,0),mk(3,0),mk(4,0)];
+  if(n===3) return [mk(3,0),mk(4,0),mk(5,0)];
+  if(n>=4 && n<=10){
+    const octs=[4,5,3,4,5,2,4];
+    return Array.from({length:Math.min(6, 3+(n%4))},(_,i)=>mk(octs[(n+i)%octs.length],pcs[(n+i)%pcs.length]));
+  }
+  if(n>=11 && n<=20){
+    const oct=(n%4)+1;
+    return [mk(oct,0),mk(oct,2),mk(oct,4),mk(oct,5),mk(oct,7),mk(oct,4)].slice(0,4+(n%3));
+  }
+  if(n>=21 && n<=35){
+    const octs=[2,3,4,5];
+    return Array.from({length:5+(n%3)},(_,i)=>mk(octs[(n+i)%octs.length],pcs[(n+i)%pcs.length]));
+  }
+  if(n>=36 && n<=45){
+    return [mk(2,0),mk(2,4),mk(3,7),mk(4,0),mk(5,7)].slice(0,3+(n%3));
+  }
+  if(n>=46 && n<=60){
+    const oct=2+(n%3);
+    if(n===48) return chord('до','major',oct);
+    if(n===49) return chord('ля','minor',oct);
+    return original.steps && original.steps.length ? original.steps.map((m,i)=>m-(60-mk(oct,0))) : [mk(oct,0),mk(oct,4),mk(oct,7)];
+  }
+  if(n>=61 && n<=72){
+    const oct=1+((n-61)%5);
+    if(original.steps?.length) return original.steps.map(m=>m + (mk(oct,0)-60));
+  }
+  if(n>=73 && n<=92){
+    const oct=1+((n-73)%5);
+    return (original.steps||[60,62,64,65]).map((m,i)=>m + (mk(oct,0)-60));
+  }
+  if(n>=93 && n<=100){
+    const oct=2+((n-93)%4);
+    return (original.steps||[60,62,64,67]).map(m=>m + (mk(oct,0)-60));
+  }
+  return original.steps;
+}
+window.buildLesson = function(n){
+  const r = V7_BASE_BUILD_LESSON(n);
+  if(!r) return r;
+  r.steps = v7CourseSteps(n,r) || r.steps;
+  if(n===2){
+    r.title='Октава: как устроена клавиатура';
+    r.objective='Понять, что такое октава, научиться находить одинаковые ноты на разной высоте и увидеть повторяющийся рисунок клавиатуры.';
+    r.theory='Октава — это расстояние от одной ноты до следующей такой же. На клавиатуре этот рисунок повторяется: семь белых нот и группы из двух и трёх чёрных клавиш.';
+    r.tip='Сначала найди две чёрные клавиши. Слева от первой находится ДО. Следующее ДО через семь белых нот — это уже новая октава.';
+    r.anyOctave=false;
+    r.steps=[60,72,48,60];
+  }
+  return r;
+};
+
+/* ---------- 3) Retry after mistakes instead of trapping the lesson ---------- */
+const V7_BASE_SEQUENCE_TASK = window.renderSequenceTask;
+window.renderSequenceTask = function(r){
+  const target=r.steps[Math.min(r.step,r.steps.length-1)];
+  const derivedHand=(r.hand&&r.hand!=='B')?r.hand:(r.type==='hands'?(target<60?'L':'R'):'B');
+  const handText=HAND_LABELS[derivedHand];
+  const dynamicText=r.dynamic?({'soft':'мягко','normal':'обычно','strong':'чуть ярче'}[r.dynamic[r.dynamicStage]||'normal']):'';
+  const retry=r.errors>=3;
+  return `<div class="task card">
+    <div class="taskTop"><div class="taskLabel">${r.type==='hands'?'СОЕДИНЯЕМ РУКИ':r.type==='technique'?'ТЕХНИКА':'СЫГРАЙ СЕЙЧАС'}</div><span class="taskTag">${r.step+1} / ${r.steps.length}</span></div>
+    ${r.type==='technique'&&r.dynamic?`<div class="focusStrip"><span>Сила звука</span><b>${dynamicText}</b><small>После правильной ноты следующий этап изменится.</small></div>`:''}
+    <div class="targetCard"><div class="targetName">${escapeHtml(noteName(target))}</div><div class="targetMeta"><span>${noteText(target)}</span><b>${escapeHtml(handText)}</b></div>${staffSvg([target],target,guessClef(target))}${keyboardHtml(target)}<div class="targetHint">Здесь важны и название, и октава. Сыграй именно указанную клавишу.</div></div>
+    <div id="lessonFeedback">${feedbackMarkup(r.errors?'bad':'wait',r.errors?'Нужна ещё одна попытка':'Жду звук',r.errors?`Сыграй ${noteText(target)} ещё раз.`:`Сыграй ${noteText(target)}.`)}</div>
+    ${r.errors>=2?`<div class="hintBox"><b>Подсказка</b><span>Нужна ${escapeHtml(noteText(target))}. Посмотри на подсвеченную клавишу и сравни её с рисунком чёрных клавиш.</span></div>`:''}
+    ${retry?`<div class="retryAction card"><div><b>Три ошибки — это не конец</b><small>Сбрось текущую попытку и спокойно сыграй цель ещё раз.</small></div><button class="secondary" id="retryLessonAttempt">↻ Попробовать ещё раз</button></div>`:''}
+  </div>`;
+};
+
+const V7_BASE_RENDER_LESSON = window.renderLesson;
+window.renderLesson = function(){
+  V7_BASE_RENDER_LESSON();
+  const b=$('#retryLessonAttempt');
+  if(b) b.onclick=()=>{runtime.errors=0;runtime.sequenceDone=false;runtime.passed=false;renderLesson();};
+};
+
+/* ---------- 4) Exact octave everywhere it is explicitly shown ---------- */
+const V7_BASE_HANDLE_PRACTICE = window.handlePracticeDetection;
+window.handlePracticeDetection = function(m,meta){
+  if(practiceState.tab==='notes'||practiceState.tab==='weak'){
+    const t=practiceState.note;
+    if(t==null)return;
+    const ok=m===t;
+    if(ok){
+      practiceState.notePassed=true;
+      markActive();
+      state.stats=state.stats||{};
+      state.stats.notes=(state.stats.notes||0)+1;
+      v6EnsureStats().perfectRun=(v6EnsureStats().perfectRun||0)+1;
+      save();
+      const el=$('#practiceFeedback');
+      if(el)el.innerHTML=feedbackMarkup('good','Верно!',`Распознано ${noteText(m)} — точное совпадение.`);
+      flashKeys([m],true);
+    }else{
+      v6EnsureStats().perfectRun=0;
+      state.mistakes=state.mistakes||{};
+      state.mistakes[m]=(state.mistakes[m]||0)+1;
+      save();
+      const el=$('#practiceFeedback');
+      if(el)el.innerHTML=feedbackMarkup('bad','Попробуй ещё',`Услышано ${noteText(m)}. Нужно ${noteText(t)}.`);
+      flashKeys([m],false);
+    }
+    return;
+  }
+  if(practiceState.tab==='session'&&practiceState.warmup?.started&&!practiceState.warmup.finished){
+    const w=practiceState.warmup,t=practiceState.note;
+    if(m===t){w.correct++;w.index++;practiceState.note=randomPracticeMidi();v6EnsureStats().perfectRun=(v6EnsureStats().perfectRun||0)+1;save();flashKeys([m],true);renderPractice();}
+    else{w.errors++;v6EnsureStats().perfectRun=0;state.mistakes=state.mistakes||{};state.mistakes[m]=(state.mistakes[m]||0)+1;save();const el=$('#practiceSessionFeedback');if(el)el.innerHTML=feedbackMarkup('bad','Почти',`Услышано ${noteText(m)}. Нужно ${noteText(t)}.`);flashKeys([m],false);}
+    return;
+  }
+  if(practiceState.tab==='tuner'){handleTunerDetected(m,meta);return;}
+  if(practiceState.tab==='chords'){handlePracticeChordDetected([m]);return;}
+  return V7_BASE_HANDLE_PRACTICE ? V7_BASE_HANDLE_PRACTICE(m,meta) : undefined;
+};
+
+/* ---------- 5) Ear training gets clear selectable modes ---------- */
+practiceState.earMode=practiceState.earMode||'note';
+practiceState.earType=practiceState.earType||'majorMinor';
+let v7EarRound=null;
+function v7NewEarNote(){
+  const pcs=[0,2,4,5,7,9,11];
+  let pc=pcs[Math.floor(Math.random()*pcs.length)];
+  let n=12*(4+1)+pc;
+  if(v7EarRound?.target===n)n=12*(4+1)+pcs[(pcs.indexOf(pc)+1)%pcs.length];
+  v7EarRound={target:n};
+}
+function v7NewEarChord(){
+  const roots=Object.keys(ROOT_PC), types=['major','minor','diminished','sus2','sus4'];
+  const root=roots[Math.floor(Math.random()*roots.length)];
+  const type=practiceState.earType==='majorMinor' ? (Math.random()>.5?'major':'minor') : types[Math.floor(Math.random()*types.length)];
+  v7EarRound={root,type,midi:chord(root,type,4)};
+}
+function v7RenderEar(){
+  const mode=practiceState.earMode||'note';
+  if(mode==='note' && !v7EarRound?.target) v7NewEarNote();
+  if(mode==='chord' && !v7EarRound?.midi) v7NewEarChord();
+  const e=v7EarRound;
+  if(mode==='note'){
+    const choices=[0,2,4,5,7,9,11].map(pc=>60+pc);
+    return `<div class="practiceCard card earPracticeCard">
+      <div class="sectionKicker">СЛУХ · НОТЫ</div><h2>Узнай ноту по звучанию</h2>
+      <p>Название скрыто до твоего ответа. Сначала слушай, затем выбирай одну из семи нот.</p>
+      <button class="primary full" id="v7EarPlay">🔊 Послушать ноту</button>
+      <div class="earChoices">${choices.map(m=>`<button class="choiceBtn" data-v7-ear-note="${m}">${noteName(m)}</button>`).join('')}</div>
+      <div class="earHint">В этой тренировке октава не важна: важен сам характер ноты.</div>
+    </div>`;
+  }
+  const typeButtons=practiceState.earType==='majorMinor' ? ['major','minor'] : ['major','minor','diminished','sus2','sus4'];
+  return `<div class="practiceCard card earPracticeCard">
+    <div class="sectionKicker">СЛУХ · АККОРДЫ</div><h2>${practiceState.earType==='majorMinor'?'Мажор или минор?':'Какой это аккорд?'}</h2>
+    <p>Здесь название и ноты скрыты. Слушай весь аккорд целиком, а не отдельную ноту.</p>
+    <div class="earModeRow"><button class="pill ${practiceState.earType==='majorMinor'?'active':''}" data-v7-ear-type="majorMinor">Мажор / минор</button><button class="pill ${practiceState.earType==='all'?'active':''}" data-v7-ear-type="all">Все типы</button></div>
+    <button class="primary full" id="v7EarPlay">🔊 Послушать аккорд</button>
+    <div class="earChoices">${typeButtons.map(t=>`<button class="choiceBtn" data-v7-ear-chord="${t}">${CHORD_LABELS[t]}</button>`).join('')}</div>
+    <div id="v7EarFeedback">${feedbackMarkup('wait','Готово','Выбери ответ после прослушивания.')}</div>
+  </div>`;
+}
+function bindV7Ear(){
+  $('#v7EarPlay')?.addEventListener('click',()=>{
+    if(practiceState.earMode==='note') playTone(v7EarRound.target,1.35);
+    else playToneGroup(v7EarRound.midi);
+  });
+  $$('[data-v7-ear-type]').forEach(b=>b.onclick=()=>{practiceState.earType=b.dataset.v7EarType;v7EarRound=null;renderPractice();});
+  $$('[data-v7-ear-note]').forEach(b=>b.onclick=()=>{
+    const ok=pitchClass(+b.dataset.v7EarNote)===pitchClass(v7EarRound.target);
+    v6EnsureStats().ear=(v6EnsureStats().ear||0)+1;markActive();save();
+    toast(ok?'Верно!':'Не угадал',ok?'good':'');
+    $('#practiceContent').insertAdjacentHTML('beforeend','');
+    renderPractice();
+    setTimeout(()=>{$('#v7EarFeedback')?.replaceChildren();},0);
+  });
+  $$('[data-v7-ear-chord]').forEach(b=>b.onclick=()=>{
+    const ok=b.dataset.v7EarChord===v7EarRound.type;
+    v6EnsureStats().ear=(v6EnsureStats().ear||0)+1;markActive();save();
+    const wrap=$('#v7EarFeedback');if(wrap)wrap.innerHTML=feedbackMarkup(ok?'good':'bad',ok?'Верно!':'Пока нет',`Правильный ответ: ${CHORD_LABELS[v7EarRound.type]}.`);
+    if(ok)setTimeout(()=>{v7EarRound=null;renderPractice();},650);
+  });
+}
+const V7_BASE_RENDER_PRACTICE = window.renderPractice;
+window.renderPractice = function(){
+  if((practiceState.tab||'notes')==='ear'){
+    $('#practice').innerHTML=`${header('Практика','home','ТРЕНАЖЁР')}<div class="practiceTabs">${[['notes','Ноты'],['chords','Аккорды'],['ear','Слух'],['tuner','Тюнер'],['weak','Слабые места'],['session','⚡ 3 минуты']].map(x=>`<button class="practiceTab ${practiceState.tab===x[0]?'active':''}" data-practice="${x[0]}">${x[1]}</button>`).join('')}</div><div class="practiceExplain card"><b>Тренируем слух отдельно от игры.</b><span>Выбери режим: отдельные ноты или разные типы аккордов.</span></div><div class="earModeGrid"><button class="earModeCard ${practiceState.earMode==='note'?'active':''}" id="v7EarModeNote"><span>♪</span><b>Ноты</b><small>Определять высоту одной ноты на слух</small></button><button class="earModeCard ${practiceState.earMode==='chord'?'active':''}" id="v7EarModeChord"><span>⌬</span><b>Аккорды</b><small>Различать мажор, минор и другие типы</small></button></div><div id="practiceContent">${v7RenderEar()}</div>`;
+    $$('[data-practice]').forEach(b=>b.onclick=()=>{practiceState.tab=b.dataset.practice;renderPractice();});
+    $('#v7EarModeNote').onclick=()=>{practiceState.earMode='note';v7EarRound=null;renderPractice();};
+    $('#v7EarModeChord').onclick=()=>{practiceState.earMode='chord';v7EarRound=null;renderPractice();};
+    bindV7Ear();
+    return;
+  }
+  V7_BASE_RENDER_PRACTICE();
+};
+
+/* ---------- 6) Full five-octave visual keyboard + auto-centering ---------- */
+window.keyboardHtml = function(target,targets=[],mode='exact'){
+  const low=24,high=84,width=34;
+  const whites=[];
+  for(let m=low;m<=high;m++) if(WHITE_PC.includes(pitchClass(m))) whites.push(m);
+  const idx=new Map(whites.map((m,i)=>[m,i]));
+  const exactTargets=targets.length?targets:(Number.isFinite(target)?[target]:[]);
+  const isTarget=m=>mode==='pitchClass'?pitchClass(m)===pitchClass(target):exactTargets.includes(m);
+  let html='';
+  for(const m of whites){
+    html+=`<button type="button" class="pKey whiteKey ${isTarget(m)?'target':''}" data-pitch="${m}" style="left:${idx.get(m)*width}px" aria-label="${escapeHtml(noteText(m))}"><span class="keyNoteLabel">${pitchClass(m)===0?noteText(m):''}</span></button>`;
+  }
+  for(let m=low;m<=high;m++) if(!WHITE_PC.includes(pitchClass(m))){
+    const before=whites.findIndex(w=>w>m)-1;
+    if(before>=0) html+=`<button type="button" class="pKey blackKey ${isTarget(m)?'target':''}" data-pitch="${m}" style="left:${before*width+23}px" aria-label="${escapeHtml(noteText(m))}"></button>`;
+  }
+  const targetValue=Number.isFinite(target)?target:exactTargets[0];
+  return `<div class="keyboardWrap fullRangeKeyboard" data-autofocus-midi="${Number.isFinite(targetValue)?targetValue:''}"><div class="keyboard" style="width:${whites.length*width}px">${html}</div></div>`;
+};
+function v7CenterKeyboard(){
+  const wraps=$$('.fullRangeKeyboard');
+  wraps.forEach(w=>{
+    const m=Number(w.dataset.autofocusMidi);if(!Number.isFinite(m))return;
+    const key=w.querySelector(`[data-pitch="${m}"]`);if(!key)return;
+    const left=key.offsetLeft+key.offsetWidth/2;
+    w.scrollLeft=Math.max(0,left-w.clientWidth/2);
+  });
+}
+const V7_BASE_RENDER = window.render;
+window.render = function(){V7_BASE_RENDER();requestAnimationFrame(v7CenterKeyboard);};
+
+/* ---------- 7) Octave-aware audio engine: MPM + spectrum cross-check ---------- */
+function v7DbToAmp(db){ return Math.pow(10,Math.max(-100,db)/20); }
+function v7SpectrumAmp(freqData,sr,fftSize,f){
+  if(!freqData||!Number.isFinite(f)||f<=0||f>=sr/2)return 0;
+  const bin=f*fftSize/sr;
+  const center=Math.round(bin);
+  let best=0;
+  for(let d=-2;d<=2;d++){
+    const i=center+d;
+    if(i>=1&&i<freqData.length) best=Math.max(best,v7DbToAmp(freqData[i]));
+  }
+  return best;
+}
+function v7SpectralScore(freqData,sr,fftSize,midi){
+  const f0=v6FrequencyForMidi(midi);
+  if(f0<27||f0>1000)return -Infinity;
+  let score=0, weight=0;
+  for(let h=1;h<=10;h++){
+    const f=f0*h;if(f>=sr/2)break;
+    const a=v7SpectrumAmp(freqData,sr,fftSize,f);
+    const w=(1/Math.pow(h,.78));
+    score += Math.log1p(a*40)*w;
+    weight += w;
+  }
+  /* Odd partials are very useful for rejecting the common octave-up false
+     positive when the fundamental is weaker than the second harmonic. */
+  for(const h of [3,5,7,9]){
+    const f=f0*h;if(f>=sr/2)break;
+    score += Math.log1p(v7SpectrumAmp(freqData,sr,fftSize,f)*40)*.65;
+  }
+  return weight?score/weight:score;
+}
+function v7FindMidiFromCandidates(rawMidi,freqData,sr,fftSize){
+  const center=Math.round(rawMidi);
+  const candidates=[];
+  for(let shift=-2;shift<=2;shift++){
+    for(const octShift of [-24,-12,0,12,24]){
+      const m=center+shift+octShift;
+      if(m>=24&&m<=84)candidates.push(m);
+    }
+  }
+  const unique=[...new Set(candidates)];
+  let best=center,bestScore=-Infinity;
+  for(const m of unique){
+    const spectral=v7SpectralScore(freqData,sr,fftSize,m);
+    const freqPenalty=Math.abs(m-center)*.035;
+    const score=spectral-freqPenalty;
+    if(score>bestScore){bestScore=score;best=m;}
+  }
+  return best;
+}
+function v7DetectPitch(buf,sr){
+  let mean=0;for(let i=0;i<buf.length;i++)mean+=buf[i];mean/=buf.length;
+  let rms=0;for(let i=0;i<buf.length;i++){const x=buf[i]-mean;rms+=x*x;}rms=Math.sqrt(rms/buf.length);
+  if(rms<0.0035)return null;
+  let rawFreq=null,clarity=0;
+  if(v6Pitchy?.PitchDetector){
+    try{
+      if(!v6PitchDetector||v6PitchDetector.inputLength!==buf.length)v6PitchDetector=v6Pitchy.PitchDetector.forFloat32Array(buf.length);
+      const res=v6PitchDetector.findPitch(buf,sr);
+      if(Number.isFinite(res?.[0])){rawFreq=res[0];clarity=Number(res[1])||0;}
+    }catch{}
+  }
+  if(!rawFreq){
+    /* YIN-like normalized difference fallback. */
+    let bestTau=-1,best=Infinity;
+    const minTau=Math.floor(sr/1100),maxTau=Math.min(Math.floor(sr/27),buf.length-2);
+    for(let tau=minTau;tau<=maxTau;tau+=2){
+      let diff=0,n=0;
+      for(let i=0;i<buf.length-tau;i+=2){const d=(buf[i]-mean)-(buf[i+tau]-mean);diff+=d*d;n++;}
+      const v=diff/(n||1);if(v<best){best=v;bestTau=tau;}
+    }
+    if(bestTau<0)return null;
+    rawFreq=sr/bestTau;
+    clarity=Math.max(0,Math.min(1,1-best/(rms*rms*2+1e-9)));
+  }
+  if(!Number.isFinite(rawFreq)||rawFreq<27||rawFreq>1100||clarity<.54)return null;
+  const rawMidi=v6MidiFromFreq(rawFreq);
+  let midi=Math.round(rawMidi);
+  if(mic?.freq) midi=v7FindMidiFromCandidates(rawMidi,mic.freq,sr,mic.analyser?.fftSize||buf.length);
+  if(midi<24||midi>84)return null;
+  const exactMidi=v6MidiFromFreq(rawFreq);
+  const cents=(exactMidi-midi)*100;
+  return {midi,confidence:clarity,rms,cents,rawFreq,correctedFreq:v6FrequencyForMidi(midi)};
+}
+window.detectPitch=v7DetectPitch;
+
+/* One stable note, but with octave agreement across frames. */
+v6StableFrames=[];
+function v7StableResult(result){
+  if(!result)return null;
+  v6StableFrames.push({midi:result.midi,confidence:result.confidence,cents:result.cents,freq:result.rawFreq});
+  if(v6StableFrames.length>10)v6StableFrames.shift();
+  const counts=new Map();
+  for(const x of v6StableFrames)counts.set(x.midi,(counts.get(x.midi)||0)+1);
+  const ranked=[...counts.entries()].sort((a,b)=>b[1]-a[1]);
+  if(!ranked.length)return null;
+  const [m,count]=ranked[0];
+  if(count<3)return null;
+  const same=v6StableFrames.filter(x=>x.midi===m);
+  return {midi:m,confidence:same.reduce((a,x)=>a+x.confidence,0)/same.length,cents:same.reduce((a,x)=>a+x.cents,0)/same.length,freq:same.reduce((a,x)=>a+x.freq,0)/same.length};
+}
+function v7UpdateMicLive(result){
+  v6UpdateLive(result);
+  const el=$('#micLive');
+  if(!el||!result)return;
+  el.innerHTML=`<span class="micLiveDot good"></span><b>${escapeHtml(noteText(result.midi))}</b><small>${Math.round(result.rawFreq)} Hz · ${Math.round(result.confidence*100)}% · ${result.cents>=0?'+':''}${Math.round(result.cents)}¢</small>`;
+}
+window.micLoop=function(){
+  if(!mic.analyser)return;
+  const buf=new Float32Array(mic.analyser.fftSize);
+  mic.analyser.getFloatTimeDomainData(buf);
+  mic.analyser.getFloatFrequencyData(mic.freq);
+  const now=performance.now();
+  const chordContext=(route==='practice'&&practiceState.tab==='chords')||(route==='lesson'&&runtime&&(runtime.type==='chord'||runtime.type==='song'&&runtime.songKind==='chord'));
+  if(chordContext&&mic.freq){
+    const poly=v7DetectChordPitches(mic.freq,mic.ctx.sampleRate,mic.analyser.fftSize);
+    if(poly.length>=2){
+      const sig=poly.map(pitchClass).sort((a,b)=>a-b).join(',');
+      if(sig!==mic.lastChordSig||now-mic.lastChordDispatch>700){mic.lastChordSig=sig;mic.lastChordDispatch=now;mic.ignoreScalarUntil=now+240;onChordDetected(poly);}
+    }
+  }
+  const result=now<mic.ignoreScalarUntil?null:v7DetectPitch(buf,mic.ctx.sampleRate);
+  if(result){
+    mic.lastSeen=now;v7UpdateMicLive(result);
+    const stable=v7StableResult(result);
+    if(stable){
+      const m=stable.midi;
+      if(m===mic.candidateMidi){
+        if(!mic.candidateSince)mic.candidateSince=now;
+        if(now-mic.candidateSince>=120&&(m!==mic.lastMidi||now-mic.lastDispatch>950)){
+          mic.lastMidi=m;mic.lastDispatch=now;markOctaveSeen(m);onDetected(m,{rms:result.rms,confidence:stable.confidence,cents:stable.cents,freq:stable.freq});
+        }
+      }else{mic.candidateMidi=m;mic.candidateSince=now;}
+    }
+  }else if(mic.lastSeen&&now-mic.lastSeen>180){
+    mic.candidateMidi=null;mic.candidateSince=0;mic.lastMidi=null;v6StableFrames=[];
+  }
+  mic.raf=requestAnimationFrame(window.micLoop);
+};
+
+/* More reliable polyphonic chord estimation using harmonic combs. */
+function v7DetectChordPitches(freqData,sr,fftSize){
+  if(!freqData)return [];
+  const candidates=[];
+  for(let m=36;m<=84;m++){
+    const f=v6FrequencyForMidi(m);
+    let score=0,weight=0;
+    for(let h=1;h<=7;h++){
+      const fh=f*h;if(fh>=sr/2)break;
+      const a=v7SpectrumAmp(freqData,sr,fftSize,fh);
+      const w=1/Math.pow(h,.78);
+      score+=Math.log1p(a*36)*w;weight+=w;
+    }
+    candidates.push({m,score:weight?score/weight:0});
+  }
+  candidates.sort((a,b)=>b.score-a.score);
+  const top=candidates[0]?.score||0;if(top<=0)return [];
+  const out=[];
+  for(const c of candidates){
+    if(c.score<top*.56)break;
+    if(out.some(m=>pitchClass(m)===pitchClass(c.m)))continue;
+    out.push(c.m);
+    if(out.length>=5)break;
+  }
+  return out.length>=2?out.sort((a,b)=>a-b):[];
+}
+window.detectChordPitches=v7DetectChordPitches;
+
+/* ---------- 8) MIDI import persists the exact chosen song arrangement ---------- */
+state.songMidi=state.songMidi||{};
+const V7_BASE_ON_MIDI_FILE = window.onMidiFile;
+window.onMidiFile = async function(e){
+  const f=e.target.files?.[0];if(!f)return;
+  try{
+    const buf=await f.arrayBuffer();
+    const notes=parseMidi(buf);
+    if(!notes.length)throw new Error('empty');
+    const picked=notes.slice(0,2400);
+    if(!songRuntime?.song)throw new Error('no song');
+    const id=songRuntime.song.id;
+    state.songMidi[id]={seq:picked.map(x=>x.note),events:picked,name:f.name,loadedAt:Date.now()};
+    songRuntime.seq=state.songMidi[id].seq.slice();
+    songRuntime.events=state.songMidi[id].events.slice();
+    songRuntime.step=0;songRuntime.loaded=true;songRuntime.mode='full';
+    state.songProgress=state.songProgress||{};
+    const prev=state.songProgress[id]||{};
+    state.songProgress[id]={...prev,source:'midi',best:Math.max(Number(prev.best)||0,0)};
+    save();toast(`MIDI загружен · ${picked.length} нот`,'good');renderSong();
+  }catch(err){toast('Не удалось прочитать MIDI','bad');}
+};
+
+const V7_BASE_OPEN_SONG=window.openSong;
+window.openSong=function(id){
+  V7_BASE_OPEN_SONG(id);
+  const saved=state.songMidi?.[id];
+  if(saved&&songRuntime){
+    songRuntime.seq=saved.seq.slice();songRuntime.events=saved.events.slice();songRuntime.loaded=true;songRuntime.mode='full';songRuntime.step=0;
+    setTimeout(()=>renderSong(),0);
+  }
+};
+
+/* Flowkey-like stage descriptions, while keeping the existing five-stage UI. */
+window.songStageData=function(s,stage){
+  const midi=s.fragment?.slice?.()||[60,62,64,67];
+  const base=12*((Math.min(5,Math.max(1,Number(s.level)||1))+1));
+  const melody=midi.map(n=>base+(n-60));
+  const bass=[base-12,base-7,base-5,base-7];
+  const plans=[
+    {name:'Послушать',kind:'listen',desc:'Сначала услышь характер фрагмента и найди его первую опорную ноту.',seq:melody.slice(0,1)},
+    {name:'Правая рука',kind:'right',desc:'Разбери мелодию маленькими группами и играй только в своём темпе.',seq:melody.slice(0,4)},
+    {name:'Левая рука',kind:'left',desc:'Освой опору отдельно. Она должна быть спокойнее мелодии и не торопить её.',seq:bass},
+    {name:'Две руки',kind:'join',desc:'Соедини партии на сниженной скорости. Сначала точность, потом темп.',seq:melody.slice(0,6)},
+    {name:'Исполнение',kind:'run',desc:'Сыграй весь доступный фрагмент без остановки и посмотри итог.',seq:melody.slice(0,8)}
+  ];
+  return plans[Math.max(0,Math.min(4,stage))];
+};
+
+/* Add an explicit accuracy banner to every song page. */
+const V7_BASE_RENDER_SONG=window.renderSong;
+window.renderSong=function(){
+  V7_BASE_RENDER_SONG();
+  const root=$('#song');if(!root||!songRuntime?.song)return;
+  const exact=!!songRuntime.loaded;
+  const old=root.querySelector('.midiPanel');
+  if(old){
+    const p=old.querySelector('p');if(p)p.textContent=exact?'Точная партия загружена из MIDI. Используются реальные ноты и тайминг выбранного файла.':'Встроенный пример — только учебный ориентир. Чтобы учить именно настоящую партию этой песни, загрузите MIDI нужной аранжировки.';
+  }
+  v7CenterKeyboard();
+};
+
+/* ---------- 9) Visual polish ---------- */
+(function(){
+  if(document.documentElement.dataset.v7Styled)return;
+  document.documentElement.dataset.v7Styled='1';
+})();
+
+/* Ensure the final renderer and microphone start from a known state. */
+window.addEventListener('load',()=>{setTimeout(()=>{window.render();v7CenterKeyboard();},40);});
