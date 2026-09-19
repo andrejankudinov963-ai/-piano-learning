@@ -1,249 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="theme-color" content="#0b1020">
-  <meta name="description" content="Piano Learning — интерактивное обучение игре на пианино">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0d0d14">
+  <meta name="description" content="Piano Learning — интерактивный курс игры на пианино с микрофоном, нотным станом и пошаговой практикой.">
   <title>Piano Learning</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <div id="app">
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <header class="topbar">
+    <button id="brand" class="brand" aria-label="На главную"><span class="brand-icon">✦</span><span>Piano Learning</span></button>
+    <div class="topStats">
+      <button id="streak" class="stat statButton" type="button">🔥 0 дней</button>
+      <span id="xpTop" class="stat">0 XP</span>
+    </div>
+  </header>
 
-    <!-- Верхняя панель -->
-    <header class="topbar">
-      <div class="brand">
-        <div class="brand-icon">🎹</div>
-        <div>
-          <div class="brand-title">Piano Learning</div>
-          <div class="brand-subtitle">Учись играть на пианино</div>
-        </div>
-      </div>
+  <main id="app" class="appShell">
+    <section id="home" class="screen active"></section>
+    <section id="course" class="screen"></section>
+    <section id="practice" class="screen"></section>
+    <section id="songs" class="screen"></section>
+    <section id="lesson" class="screen"></section>
+    <section id="song" class="screen"></section>
+  </main>
 
-      <div class="top-actions">
-        <button class="icon-btn" id="topXpBtn" title="Уровень">
-          ⭐
-        </button>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="calendarOverlay" class="calendarOverlay" aria-hidden="true"></div>
 
-        <button class="icon-btn" id="topStreakBtn" title="Серия">
-          🔥
-        </button>
-      </div>
-    </header>
-
-    <!-- Основной экран -->
-    <main id="screen-home" class="screen active">
-
-      <section class="hero-card">
-        <div class="hero-content">
-          <div class="hero-kicker">ТВОЙ ПРОГРЕСС</div>
-
-          <div class="hero-level-row">
-            <div>
-              <div class="hero-level" id="homeLevel">Уровень 1</div>
-              <div class="hero-xp" id="homeXp">0 / 100 XP</div>
-            </div>
-
-            <div class="level-badge" id="homeLevelBadge">
-              1
-            </div>
-          </div>
-
-          <div class="xp-bar">
-            <div class="xp-fill" id="homeXpFill"></div>
-          </div>
-
-          <div class="hero-stats">
-            <div>
-              <span id="homeLessons">0</span>
-              <small>уроков</small>
-            </div>
-
-            <div>
-              <span id="homeAchievements">0</span>
-              <small>достижений</small>
-            </div>
-
-            <div>
-              <span id="homeStreak">0</span>
-              <small>дней подряд</small>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Продолжение курса -->
-      <section class="continue-card">
-        <div class="section-label">КУРС</div>
-
-        <div class="continue-main">
-          <div>
-            <h2 id="continueTitle">Начать обучение</h2>
-            <p id="continueSubtitle">
-              Пройди первый урок и начни свой путь пианиста.
-            </p>
-          </div>
-
-          <button class="primary-btn" id="continueBtn">
-            <span id="continueBtnText">Начать</span>
-            <span>→</span>
-          </button>
-        </div>
-
-        <div class="course-progress">
-          <div class="course-progress-top">
-            <span>Прогресс курса</span>
-            <span id="courseProgressText">0 из 115</span>
-          </div>
-
-          <div class="progress-bar">
-            <div class="progress-fill" id="courseProgressFill"></div>
-          </div>
-
-          <button class="small-btn" id="calendarBtn">
-            📅 Календарь
-          </button>
-        </div>
-      </section>
-
-      <!-- Быстрые действия -->
-      <section class="quick-grid">
-
-        <button class="quick-card" id="streakCard">
-          <div class="quick-icon">🔥</div>
-          <div class="quick-title">Серия</div>
-          <div class="quick-value" id="streakValue">0 дней</div>
-          <div class="quick-description">Продолжай заниматься каждый день</div>
-        </button>
-
-        <button class="quick-card" id="achievementsCard">
-          <div class="quick-icon">🏆</div>
-          <div class="quick-title">Достижения</div>
-          <div class="quick-value" id="achievementsValue">0 / 30</div>
-          <div class="quick-description">Собирай скрытые достижения</div>
-        </button>
-
-        <button class="quick-card" id="levelCard">
-          <div class="quick-icon">⭐</div>
-          <div class="quick-title">Уровень</div>
-          <div class="quick-value" id="levelValue">1</div>
-          <div class="quick-description">Повышай уровень за практику</div>
-        </button>
-
-        <button class="quick-card" id="practiceCard">
-          <div class="quick-icon">🎧</div>
-          <div class="quick-title">Практика</div>
-          <div class="quick-value">Тренировка</div>
-          <div class="quick-description">Ноты, слух и микрофон</div>
-        </button>
-
-      </section>
-
-      <!-- Последняя активность -->
-      <section class="activity-card">
-        <div class="section-heading">
-          <div>
-            <div class="section-label">АКТИВНОСТЬ</div>
-            <h2>Твоя неделя</h2>
-          </div>
-
-          <button class="text-btn" id="activityCalendarBtn">
-            Открыть календарь
-          </button>
-        </div>
-
-        <div class="week-grid" id="weekGrid"></div>
-      </section>
-
-    </main>
-
-    <!-- Курс -->
-    <main id="screen-course" class="screen">
-      <div class="page-header">
-        <div class="section-label">ОБУЧЕНИЕ</div>
-        <h1>Курс</h1>
-        <p>115 уроков от самых основ до уверенной игры.</p>
-      </div>
-
-      <div id="courseModules" class="modules-container"></div>
-    </main>
-
-    <!-- Урок -->
-    <main id="screen-lesson" class="screen">
-      <div id="lessonRoot"></div>
-    </main>
-
-    <!-- Практика -->
-    <main id="screen-practice" class="screen">
-      <div class="page-header">
-        <div class="section-label">ТРЕНИРОВКА</div>
-        <h1>Практика</h1>
-        <p>Тренируй слух, ноты и игру через микрофон.</p>
-      </div>
-
-      <div id="practiceRoot"></div>
-    </main>
-
-    <!-- Песни -->
-    <main id="screen-songs" class="screen">
-      <div class="page-header">
-        <div class="section-label">ПЕСНИ</div>
-        <h1>Песни</h1>
-        <p>Учись играть настоящие мелодии постепенно.</p>
-      </div>
-
-      <div id="songsRoot"></div>
-    </main>
-
-  </div>
-
-  <!-- Нижняя навигация -->
-  <nav class="bottom-nav" id="bottomNav">
-
-    <button class="nav-btn active" data-screen="home">
-      <span class="nav-icon">⌂</span>
-      <span>Главное</span>
-    </button>
-
-    <button class="nav-btn" data-screen="course">
-      <span class="nav-icon">📚</span>
-      <span>Курс</span>
-    </button>
-
-    <button class="nav-btn" data-screen="practice">
-      <span class="nav-icon">🎧</span>
-      <span>Практика</span>
-    </button>
-
-    <button class="nav-btn" data-screen="songs">
-      <span class="nav-icon">🎵</span>
-      <span>Песни</span>
-    </button>
-
+  <nav class="bottomNav" aria-label="Навигация">
+    <button data-nav="home" class="active"><span>⌂</span><small>Главная</small></button>
+    <button data-nav="course"><span>▦</span><small>Курс</small></button>
+    <button data-nav="practice"><span>◎</span><small>Практика</small></button>
+    <button data-nav="songs"><span>♪</span><small>Песни</small></button>
   </nav>
 
-  <!-- Модальные окна -->
-
-  <div class="modal" id="modal">
-    <div class="modal-backdrop"></div>
-
-    <div class="modal-window">
-      <button class="modal-close" id="modalClose">×</button>
-      <div id="modalContent"></div>
-    </div>
-  </div>
-
-  <!-- Toast -->
-  <div class="toast" id="toast"></div>
-
-  <!-- Основной JS -->
-  <script src="app.js"></script>
-
-  <!-- Улучшения Ultimate V4 -->
-  <script src="ultimate_patch.js"></script>
-
+  <script src="app.js?v=v5"></script>
+<script>/* v5 is fully contained in app.js */</script>
 </body>
 </html>
