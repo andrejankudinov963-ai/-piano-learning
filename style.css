@@ -41,3 +41,107 @@ button,input{font:inherit}button{border:0;cursor:pointer;color:inherit}a{color:i
 
 .songFocus{display:flex;gap:11px;align-items:center;padding:11px 12px;border:1px solid var(--line);border-radius:15px;background:#12121a;margin:10px 0}.songMiniArt{width:42px;height:42px;display:grid;place-items:center;flex:none;border-radius:13px;background:#242230;font-size:20px}.songFocus b,.songFocus span{display:block}.songFocus b{font-size:12px}.songFocus span{margin-top:2px;color:var(--muted);font-size:10px}.focusCard{display:flex;gap:12px;align-items:center;padding:14px;border:1px solid var(--line);border-radius:16px;background:#111119;margin-top:10px}.focusIcon{width:44px;height:44px;display:grid;place-items:center;flex:none;border-radius:14px;background:#25243a;color:var(--accent2);font-size:21px}.focusCard b{font-size:13px}.focusCard p{margin:3px 0 0;color:var(--muted);font-size:11px}.miniCheckList{display:grid;gap:7px;margin:10px 0}.checkStep{padding:10px 12px;text-align:left;border:1px solid var(--line);border-radius:13px;background:#13131b;color:#c7c2d0}.checkStep.done{color:#a5e9da;border-color:rgba(110,231,199,.22);background:rgba(110,231,199,.06)}.chordPulse{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:9px;padding:8px 10px;border-radius:12px;background:rgba(157,131,255,.07);border:1px solid rgba(157,131,255,.13)}.chordPulse strong{font-size:17px;color:#cabfff}.chordPulse span{color:var(--muted);font-size:10px}.earCard{display:grid;grid-template-columns:42px 1fr auto;gap:10px;align-items:center;margin-top:12px;padding:13px;border-radius:16px;background:#101017;border:1px solid var(--line)}.earIcon{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:#242230;color:#c8bcff;font-size:20px}.earCard b{font-size:12px}.earCard p{margin:2px 0 0;color:var(--muted);font-size:10px}.earCard .primary{min-height:39px;padding:8px 11px;font-size:11px}
 @media(max-width:600px){.earCard{grid-template-columns:42px 1fr}.earCard .primary{grid-column:1/-1;width:100%}.focusCard{align-items:flex-start}}
+
+
+/* Clarity + activity calendar */
+.statButton{appearance:none;-webkit-appearance:none}
+.permissionHint{margin-top:8px;padding:10px 12px;border-radius:13px;border:1px solid var(--line);background:rgba(255,255,255,.025);font-size:11px;color:#aaa5b5}
+.permissionHint.good{color:#a4e8da;border-color:rgba(110,231,199,.22);background:rgba(110,231,199,.05)}
+.permissionHint.bad{color:#ffb0ba;border-color:rgba(255,113,131,.22);background:rgba(255,113,131,.05)}
+.lessonRow.locked{opacity:.48;filter:saturate(.55);cursor:not-allowed}
+.lessonRow.locked .lessonBody em{display:block;color:#777282;font-size:9px;font-style:normal;margin-top:2px}
+.theoryHeadline{margin:9px 0 0;display:grid;gap:4px}
+.theoryHeadline span{font-size:19px;font-weight:900;letter-spacing:-.3px}
+.theoryHeadline b{font-size:10px;color:var(--muted);font-weight:600}
+.theory .plainExplain{margin-top:12px;padding:12px 13px;border:1px solid rgba(157,131,255,.18);border-radius:15px;background:linear-gradient(135deg,rgba(157,131,255,.08),rgba(255,255,255,.02));display:grid;gap:4px}
+.plainExplain strong{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#c9bfff}
+.plainExplain span{font-size:12px;color:#cec8d7}
+.songCoachSteps{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:12px 0}
+.songCoachStep{padding:10px;border:1px solid var(--line);border-radius:14px;background:#111119;display:grid;gap:3px}
+.songCoachStep i{width:24px;height:24px;display:grid;place-items:center;border-radius:8px;background:#242230;color:#c7bbff;font-style:normal;font-size:10px;font-weight:900}
+.songCoachStep b{font-size:11px}.songCoachStep span{font-size:9px;color:var(--muted);line-height:1.35}
+.songNowBadge{font-size:9px;letter-spacing:.13em;color:#c6baff;font-weight:900;text-align:center;margin-bottom:2px}
+.songSpeed{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;margin-top:10px;padding:9px 11px;background:#111119;border:1px solid var(--line);border-radius:13px;color:var(--muted);font-size:11px}
+.songSpeed input{width:100%;accent-color:#9d83ff}.songSpeed b{color:#d1c7ff;font-size:11px}
+.calendarOverlay{position:fixed;inset:0;z-index:120;display:none}.calendarOverlay.show{display:block}.calendarBackdrop{position:absolute;inset:0;background:rgba(0,0,0,.68);backdrop-filter:blur(6px)}
+.calendarDialog{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(720px,calc(100% - 24px));padding:20px;max-height:min(720px,calc(100vh - 28px));overflow:auto;box-shadow:0 25px 90px rgba(0,0,0,.55)}
+.calendarHead{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.calendarHead h2{margin:3px 0 4px;font-size:24px}.calendarHead p{margin:0;color:var(--muted);font-size:11px;max-width:560px}
+.calendarStats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:15px 0}.calendarStats>div{padding:11px 12px;border-radius:14px;background:#111119;border:1px solid var(--line);display:grid;gap:2px}.calendarStats b{font-size:18px}.calendarStats span{font-size:10px;color:var(--muted)}
+.calendarLabels{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin:2px 0 9px;color:#777181;font-size:9px;text-align:center}.calendarMonths{position:relative;height:14px;color:#777181;font-size:9px}.calendarMonths span{position:absolute}.calendarGrid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.calCell{display:block;aspect-ratio:1;border-radius:5px;background:#1a1a23;border:1px solid rgba(255,255,255,.025)}.calCell.level-1{background:#40355e;border-color:#5a4b81}.calCell.level-2{background:#5e4c8b;border-color:#7763a9}.calCell.level-3{background:#7b64ba;border-color:#947ed0}.calCell.level-4{background:#9d83ff;border-color:#b6a3ff;box-shadow:0 0 12px rgba(157,131,255,.25)}
+.calendarLegend{display:flex;align-items:center;gap:6px;margin-top:12px;color:var(--muted);font-size:9px}.calendarLegend i{width:11px;height:11px;border-radius:3px;background:#1a1a23;border:1px solid rgba(255,255,255,.025)}.calendarLegend i.level-1{background:#40355e}.calendarLegend i.level-2{background:#5e4c8b}.calendarLegend i.level-3{background:#7b64ba}.calendarLegend i.level-4{background:#9d83ff}
+@media(max-width:700px){.songCoachSteps{grid-template-columns:1fr}.calendarDialog{padding:15px}.calendarGrid{gap:3px}.calCell{border-radius:4px}.calendarStats{grid-template-columns:repeat(3,1fr)}}
+
+.glossaryMini{margin-top:10px;padding:11px 12px;border-radius:14px;background:#111119;border:1px solid var(--line);display:grid;gap:4px}.glossaryMini span{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#c4b8ff;font-weight:900}.glossaryMini p{margin:0!important;font-size:11px!important;color:#aaa5b5!important}
+.playAlongBtn{margin-top:9px}
+
+/* Ultimate v2 enhancements */
+:root{
+  --accentGlow:rgba(155,124,255,.22);
+  --glass:rgba(22,25,34,.82);
+}
+.topStats{display:flex;gap:8px;align-items:center}
+.statButton{border:1px solid var(--line);background:rgba(30,34,44,.72);padding:8px 10px;border-radius:12px;cursor:pointer}
+.heroTopline{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.dashboardGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.levelCard,.miniFeature,.dailyCard,.smartReview{border:1px solid var(--line)}
+.levelCard{display:grid;grid-template-columns:42px 1fr;align-items:center;gap:10px}
+.levelCard .dashIcon{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:rgba(155,124,255,.12);color:#cbbdff;font-size:22px}
+.levelCard small,.miniFeature small,.dailyCard small,.smartReview small{display:block;color:var(--muted);margin-top:3px}
+.levelCard .miniProgress{grid-column:1/-1;height:6px;background:#252a34;border-radius:999px;overflow:hidden;margin-top:2px}
+.levelCard .miniProgress i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:999px}
+.miniFeature{display:grid;grid-template-columns:38px 1fr 18px;align-items:center;gap:10px;text-align:left;background:var(--glass)}
+.miniFeature>span{font-size:26px}
+.miniFeature strong{color:var(--muted)}
+.dailyCard{padding:18px}
+.dailyTop{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.dailyTop h3{margin:4px 0 0;font-size:18px}
+.dailyTop>span{font-weight:900;color:#cbbdff}
+.dailyCard .progressTrack{margin:12px 0 8px}
+.smartReview{width:100%;display:grid;grid-template-columns:48px 1fr auto;align-items:center;gap:12px;text-align:left;padding:16px;color:var(--text)}
+.smartIcon{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:rgba(110,231,199,.08);color:var(--accent2);font-size:22px}
+.smartReview>span{font-size:12px;color:#cbbdff;font-weight:800}
+.progressMeta button{background:none;color:#cbbdff;padding:0;font-size:12px;font-weight:800}
+.practiceIntro{margin-bottom:12px}
+.earPracticeCard{overflow:hidden}
+.earHero{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.earPulse{width:64px;height:64px;border-radius:20px;display:grid;place-items:center;background:radial-gradient(circle,var(--accentGlow),rgba(155,124,255,.04));font-size:30px;color:#cbbdff;box-shadow:0 0 0 8px rgba(155,124,255,.04)}
+.earChoices{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0}
+.tunerCard{padding:24px;text-align:center}
+.tunerNote{font-size:58px;line-height:1;font-weight:900;letter-spacing:-2px}
+.tunerOct{color:var(--muted);margin:7px 0 20px}
+.tunerMeter{position:relative;height:10px;border-radius:999px;background:linear-gradient(90deg,#39303a 0 45%,#26352d 45% 55%,#39303a 55%);overflow:hidden}
+.tunerNeedle{position:absolute;top:-5px;width:4px;height:20px;border-radius:99px;background:var(--text);transform:translateX(-50%);transition:.12s}
+.tunerScale{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-top:8px}
+.tunerCents{margin-top:12px;font-weight:800}
+.rememberStrip{display:flex;gap:10px;align-items:flex-start;margin-top:12px;padding:12px 13px;border-radius:14px;background:rgba(155,124,255,.07);border:1px solid rgba(155,124,255,.12)}
+.rememberStrip>span{font-size:18px}
+.rememberStrip b{display:block;font-size:12px}
+.rememberStrip small{display:block;color:#c8ccd6;margin-top:2px}
+.achievementDialog{position:relative;z-index:2;width:min(680px,calc(100vw - 24px));margin:10vh auto;padding:18px;max-height:80vh;overflow:auto}
+.achievementGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.achievement{display:grid;grid-template-columns:40px 1fr 24px;align-items:center;gap:10px;padding:13px;border:1px solid var(--line);border-radius:15px;background:#14171e;opacity:.52}
+.achievement.unlocked{opacity:1;border-color:rgba(155,124,255,.28);background:linear-gradient(135deg,rgba(155,124,255,.10),#14171e)}
+.achievement>span{font-size:24px}
+.achievement b{display:block}
+.achievement small{display:block;color:var(--muted);margin-top:2px}
+.achievement i{font-style:normal}
+.songMastery{display:flex;align-items:center;gap:8px;margin-top:9px;font-size:11px;color:var(--muted)}
+.songMastery i{flex:1;height:5px;background:#252a34;border-radius:99px;overflow:hidden}
+.songMastery i b{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:99px}
+.songMastery strong{color:#cbbdff}
+.teacherLead{color:#c9ced8;margin-top:4px}
+.songStageRail{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin:15px 0}
+.songStage{min-width:0;text-align:left;padding:10px;border-radius:13px;background:#14171e;border:1px solid var(--line);display:grid;gap:2px}
+.songStage i{font-style:normal;font-size:11px;color:var(--muted)}
+.songStage b{font-size:12px}
+.songStage small{font-size:10px;color:var(--muted)}
+.songStage.active{background:rgba(155,124,255,.12);border-color:rgba(155,124,255,.4);box-shadow:0 0 0 1px rgba(155,124,255,.08) inset}
+.songStage.open i{color:#cbbdff}
+.songStage:disabled{cursor:not-allowed;opacity:.42}
+@media(max-width:680px){
+  .dashboardGrid{grid-template-columns:1fr}
+  .achievementGrid{grid-template-columns:1fr}
+  .songStageRail{grid-template-columns:repeat(2,1fr)}
+  .songStage:last-child{grid-column:1/-1}
+  .earChoices{grid-template-columns:repeat(3,1fr)}
+}
