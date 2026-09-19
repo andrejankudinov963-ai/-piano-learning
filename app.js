@@ -1604,7 +1604,9 @@ $('#brand').onclick=()=>v6Go('home');
 
 /* Override navigation only; all existing lesson/song logic remains intact. */
 
-ensureDay();render();
+/* Initial render is intentionally deferred until ALL version layers are initialized.
+   V10 wraps renderHome() below; calling render earlier triggers the temporal-dead-zone
+   error "Cannot access 'V10_BASE_RENDER_HOME' before initialization". */
 
 
 /* =======================================================================
@@ -4737,3 +4739,13 @@ window.addEventListener('load',async()=>{
     `;document.head.appendChild(s)
   }
 })();
+
+
+/* V11 final startup: all renderer wrappers and audio helpers are initialized now. */
+try {
+  ensureDay();
+  if (typeof window.render === 'function') window.render();
+  else render();
+} catch (e) {
+  console.error('Piano Learning startup failed:', e);
+}
